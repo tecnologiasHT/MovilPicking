@@ -1,0 +1,403 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0C3BDA2-2CD9-422F-83B8-F6676931282E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Picking</RootNamespace>
+    <AssemblyName>Picking</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>Picking</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ApplicationIcon>adn_picking.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Symbol, Version=2.8.0.0, Culture=neutral, PublicKeyToken=68ec8db391f150ca, processorArchitecture=MSIL" />
+    <Reference Include="Symbol.Barcode, Version=2.9.0.0, Culture=neutral, PublicKeyToken=68ec8db391f150ca, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=3.0.3600.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmIndicadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIndicadores.Designer.cs">
+      <DependentUpon>frmIndicadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Alerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Alerta.Designer.cs">
+      <DependentUpon>frm_Alerta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AvisoPartidaDoble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AvisoPartidaDoble.Designer.cs">
+      <DependentUpon>frm_AvisoPartidaDoble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cajas_picking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_cajas_picking.Designer.cs">
+      <DependentUpon>frm_cajas_picking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cajas_transito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_cajas_transito.Designer.cs">
+      <DependentUpon>frm_cajas_transito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_desbloqearlocalizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_desbloqearlocalizacion.Designer.cs">
+      <DependentUpon>frm_desbloqearlocalizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_detalle_factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_detalle_factura.Designer.cs">
+      <DependentUpon>frm_detalle_factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_excepciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_excepciones.Designer.cs">
+      <DependentUpon>frm_excepciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_leer_carrito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_leer_carrito.Designer.cs">
+      <DependentUpon>frm_leer_carrito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_leer_loc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_leer_loc.Designer.cs">
+      <DependentUpon>frm_leer_loc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_liberar_cajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_liberar_cajas.Designer.cs">
+      <DependentUpon>frm_liberar_cajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_lista_art_so.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_lista_art_so.Designer.cs">
+      <DependentUpon>frm_lista_art_so.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_lista_cajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_lista_cajas.Designer.cs">
+      <DependentUpon>frm_lista_cajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSurtimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSurtimiento.designer.cs">
+      <DependentUpon>frmSurtimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_captura_articulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_captura_articulos.designer.cs">
+      <DependentUpon>frm_captura_articulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_leer_articulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_leer_articulos.designer.cs">
+      <DependentUpon>frm_leer_articulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_login.Designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_menu.Designer.cs">
+      <DependentUpon>frm_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_pantalla_espera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_pantalla_espera.Designer.cs">
+      <DependentUpon>frm_pantalla_espera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_recepcion_cajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_recepcion_cajas.Designer.cs">
+      <DependentUpon>frm_recepcion_cajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_seleccionar_areas_piciking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_seleccionar_areas_piciking.Designer.cs">
+      <DependentUpon>frm_seleccionar_areas_piciking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_seleccionar_picking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_seleccionar_picking.Designer.cs">
+      <DependentUpon>frm_seleccionar_picking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sel_caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sel_caja.Designer.cs">
+      <DependentUpon>frm_sel_caja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sel_loc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sel_loc.designer.cs">
+      <DependentUpon>frm_sel_loc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_supervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_supervisor.Designer.cs">
+      <DependentUpon>frm_supervisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_surtir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_surtir.Designer.cs">
+      <DependentUpon>frm_surtir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_surtir_articulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_surtir_articulo.Designer.cs">
+      <DependentUpon>frm_surtir_articulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_surtir_articulo_multiple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_surtir_articulo_multiple.Designer.cs">
+      <DependentUpon>frm_surtir_articulo_multiple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_time_out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_time_out.Designer.cs">
+      <DependentUpon>frm_time_out.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_zona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_zona.Designer.cs">
+      <DependentUpon>frm_zona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmIndicadores.resx">
+      <DependentUpon>frmIndicadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Alerta.resx">
+      <DependentUpon>frm_Alerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AvisoPartidaDoble.resx">
+      <DependentUpon>frm_AvisoPartidaDoble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_cajas_picking.resx">
+      <DependentUpon>frm_cajas_picking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_cajas_transito.resx">
+      <DependentUpon>frm_cajas_transito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_desbloqearlocalizacion.resx">
+      <DependentUpon>frm_desbloqearlocalizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_detalle_factura.resx">
+      <DependentUpon>frm_detalle_factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_excepciones.resx">
+      <DependentUpon>frm_excepciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_leer_carrito.resx">
+      <DependentUpon>frm_leer_carrito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_leer_loc.resx">
+      <DependentUpon>frm_leer_loc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_liberar_cajas.resx">
+      <DependentUpon>frm_liberar_cajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_lista_art_so.resx">
+      <DependentUpon>frm_lista_art_so.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_lista_cajas.resx">
+      <DependentUpon>frm_lista_cajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSurtimiento.resx">
+      <DependentUpon>frmSurtimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_captura_articulos.resx">
+      <DependentUpon>frm_captura_articulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_leer_articulos.resx">
+      <DependentUpon>frm_leer_articulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_menu.resx">
+      <DependentUpon>frm_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_pantalla_espera.resx">
+      <DependentUpon>frm_pantalla_espera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_recepcion_cajas.resx">
+      <DependentUpon>frm_recepcion_cajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_seleccionar_areas_piciking.resx">
+      <DependentUpon>frm_seleccionar_areas_piciking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_seleccionar_picking.resx">
+      <DependentUpon>frm_seleccionar_picking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sel_caja.resx">
+      <DependentUpon>frm_sel_caja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sel_loc.resx">
+      <DependentUpon>frm_sel_loc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_supervisor.resx">
+      <DependentUpon>frm_supervisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_surtir.resx">
+      <DependentUpon>frm_surtir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_surtir_articulo.resx">
+      <DependentUpon>frm_surtir_articulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_surtir_articulo_multiple.resx">
+      <DependentUpon>frm_surtir_articulo_multiple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_time_out.resx">
+      <DependentUpon>frm_time_out.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_zona.resx">
+      <DependentUpon>frm_zona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Web References\PickingWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="adn_picking.ico" />
+    <Content Include="Aviso_Evento_Log.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Web References\PickingWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PickingWS\WebService1.disco" />
+    <None Include="Web References\PickingWS\WebService1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.1.22/PickingWS/WebService1.asmx">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\PickingWS\</RelPath>
+      <UpdateFromURL>http://192.168.1.22/PickingWS/WebService1.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
