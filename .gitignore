@@ -1,0 +1,5 @@
+bin/Debug/Aviso_Evento_Log.html
+*.exe
+bin/*
+obj/*
+Picking.suo
