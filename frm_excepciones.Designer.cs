@@ -38,7 +38,10 @@
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(226, 125);
+            this.btn_salir.BackColor = System.Drawing.Color.Red;
+            this.btn_salir.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_salir.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_salir.Location = new System.Drawing.Point(3, 125);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(80, 37);
             this.btn_salir.TabIndex = 0;
@@ -64,7 +67,10 @@
             // 
             // btnaceptar
             // 
-            this.btnaceptar.Location = new System.Drawing.Point(3, 125);
+            this.btnaceptar.BackColor = System.Drawing.Color.Green;
+            this.btnaceptar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btnaceptar.ForeColor = System.Drawing.Color.Snow;
+            this.btnaceptar.Location = new System.Drawing.Point(225, 127);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(80, 37);
             this.btnaceptar.TabIndex = 3;
