@@ -341,7 +341,9 @@
             // 
             // btnIndicadores
             // 
-            this.btnIndicadores.BackColor = System.Drawing.Color.Lime;
+            this.btnIndicadores.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnIndicadores.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnIndicadores.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIndicadores.Location = new System.Drawing.Point(213, 104);
             this.btnIndicadores.Name = "btnIndicadores";
             this.btnIndicadores.Size = new System.Drawing.Size(96, 22);

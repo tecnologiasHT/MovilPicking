@@ -25,10 +25,13 @@ namespace Picking
             if (login == true)
             {
                 Application.Exit();
+               
             }
             else
             {
+                
                 this.Close();
+                
             }
         }
 
