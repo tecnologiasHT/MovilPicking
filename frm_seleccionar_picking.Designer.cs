@@ -36,34 +36,34 @@
             // btn_picking1
             // 
             this.btn_picking1.BackColor = System.Drawing.Color.LawnGreen;
-            this.btn_picking1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_picking1.Location = new System.Drawing.Point(3, 4);
+            this.btn_picking1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_picking1.Location = new System.Drawing.Point(21, 15);
             this.btn_picking1.Name = "btn_picking1";
-            this.btn_picking1.Size = new System.Drawing.Size(120, 73);
+            this.btn_picking1.Size = new System.Drawing.Size(136, 72);
             this.btn_picking1.TabIndex = 0;
-            this.btn_picking1.Text = "PICKING1";
+            this.btn_picking1.Text = "Picking 1";
             this.btn_picking1.Click += new System.EventHandler(this.btn_picking1_Click);
             // 
             // btn_picking2
             // 
             this.btn_picking2.BackColor = System.Drawing.Color.Yellow;
-            this.btn_picking2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_picking2.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.btn_picking2.ForeColor = System.Drawing.Color.Black;
-            this.btn_picking2.Location = new System.Drawing.Point(156, 6);
+            this.btn_picking2.Location = new System.Drawing.Point(163, 15);
             this.btn_picking2.Name = "btn_picking2";
-            this.btn_picking2.Size = new System.Drawing.Size(129, 73);
+            this.btn_picking2.Size = new System.Drawing.Size(136, 72);
             this.btn_picking2.TabIndex = 1;
-            this.btn_picking2.Text = "PICKING2";
+            this.btn_picking2.Text = "Picking 2";
             this.btn_picking2.Click += new System.EventHandler(this.btn_picking2_Click);
             // 
             // btn_salir
             // 
             this.btn_salir.BackColor = System.Drawing.Color.Red;
-            this.btn_salir.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_salir.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular);
             this.btn_salir.ForeColor = System.Drawing.Color.White;
-            this.btn_salir.Location = new System.Drawing.Point(85, 115);
+            this.btn_salir.Location = new System.Drawing.Point(99, 125);
             this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(120, 71);
+            this.btn_salir.Size = new System.Drawing.Size(120, 37);
             this.btn_salir.TabIndex = 2;
             this.btn_salir.Text = "Salir";
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Reflection;
 namespace Picking
 {
     public partial class frm_login : Form 
@@ -213,8 +214,12 @@ namespace Picking
 
         }
 
+
+
         private void frm_login_Load(object sender, EventArgs e)
         {
+            lblCompilacion.Text = "Picking Ver. " + Properties.Resources.ver;
+
             txt_usuario.Focus();  
         }
 

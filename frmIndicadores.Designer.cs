@@ -65,12 +65,12 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 16);
-            this.label1.Text = "Por Surtir";
+            this.label1.Text = "Por Surtir:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblPorSurtir
@@ -87,7 +87,7 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(77, 3);
             this.label3.Name = "label3";
@@ -108,6 +108,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Controls.Add(this.lblTotal);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.lblExtra);
@@ -312,6 +313,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.lbl_so_manana);
             this.tabPage1.Controls.Add(this.label1);
@@ -341,9 +343,12 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.Red;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 20);
+            this.button1.Size = new System.Drawing.Size(80, 20);
             this.button1.TabIndex = 1;
             this.button1.Text = "Actualizar";
             this.button1.Click += new System.EventHandler(this.button1_Click);

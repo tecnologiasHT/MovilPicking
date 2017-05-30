@@ -60,7 +60,7 @@
             this.lst_cajas.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lst_cajas.Location = new System.Drawing.Point(163, 29);
             this.lst_cajas.Name = "lst_cajas";
-            this.lst_cajas.Size = new System.Drawing.Size(148, 98);
+            this.lst_cajas.Size = new System.Drawing.Size(148, 97);
             this.lst_cajas.TabIndex = 3;
             // 
             // label2
@@ -132,7 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(326, 188);
+            this.ClientSize = new System.Drawing.Size(638, 455);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_confirmar_envio);
             this.Controls.Add(this.lbl_msj);

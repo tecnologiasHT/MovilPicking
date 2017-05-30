@@ -48,7 +48,7 @@
             // 
             this.txt_caja.Location = new System.Drawing.Point(3, 50);
             this.txt_caja.Name = "txt_caja";
-            this.txt_caja.Size = new System.Drawing.Size(203, 27);
+            this.txt_caja.Size = new System.Drawing.Size(203, 23);
             this.txt_caja.TabIndex = 0;
             this.txt_caja.GotFocus += new System.EventHandler(this.txt_caja_GotFocus);
             this.txt_caja.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_caja_KeyDown);
@@ -63,9 +63,12 @@
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(223, 163);
+            this.btn_cerrar.BackColor = System.Drawing.Color.Red;
+            this.btn_cerrar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_cerrar.Location = new System.Drawing.Point(217, 163);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(87, 28);
+            this.btn_cerrar.Size = new System.Drawing.Size(93, 28);
             this.btn_cerrar.TabIndex = 2;
             this.btn_cerrar.Text = "F3-Salir";
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
