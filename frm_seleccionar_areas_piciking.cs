@@ -33,11 +33,8 @@ namespace Picking
                 {
                     if (dt.Tables[0].Rows.Count > 0)
                     {
-                        //DataRow dr;
                         foreach (DataRow dr in dt.Tables[0].Rows)
                         {
-                            //IdZona,
-                            //'ZONA'+ LTRIM(STR(IdZona)) AS Zona
 
                             if (!string.IsNullOrEmpty(dr["Zona"].ToString()))
                             {
@@ -61,16 +58,12 @@ namespace Picking
         void lista_zonas_seleccionadas()
         {
             DataSet dt = new DataSet();
-            //lst_zonas.DataSource = null;
-            //lst_zonas.Items.Clear();
+            
             dt = Global.lista_zonas_usuario();
             string zona = "";
-            //int i = -1;
             if (dt != null)
             {
-                //lst_zonas.DataSource = dt.Tables[0];
-                //lst_zonas.DisplayMember = "Zona";
-                //lst_zonas.ValueMember = "Id";
+                
                 if (dt.Tables.Count > 0)
                 {
                     if (dt.Tables[0].Rows.Count > 0)
@@ -90,12 +83,6 @@ namespace Picking
                                         lstv_a.Items[i].Checked = true;
                                     }
                                 }
-                                //i=lstv_a.Items.IndexOf(l);
-                                //if (i != -1)
-                                //{
-                                    
-                                   
-                                //}
 
                             }
                             else if (dr["Area"].ToString().Trim() == "B")
@@ -119,8 +106,7 @@ namespace Picking
                         }
                     }
                 }
-               // SELECT Id, Usuario, IdZona, Area, STR(IdZona) + '-' + Area AS Zona
-               //FROM  ADN_Picking_Usuario_Zona
+              
             }
         
         }
@@ -129,8 +115,6 @@ namespace Picking
         {
             if (login == true)
             {
-                //Global.Eliminar_Zonas_Usuario(Global.usuario);
-                //Application.Exit();
                 frm_seleccionar_picking f = new frm_seleccionar_picking();
                 this.Close();
                 
@@ -207,12 +191,8 @@ namespace Picking
 
             if (login == true)
             {
-                //Global.Eliminar_Zonas_Usuario(Global.usuario);
-                //Application.Exit();
+                
                 Global.orden_zona = Global.obtener_orden_surtimiento_picking1();
-                //frmIndicadores f1 = new frmIndicadores();
-                //f1.ShowDialog();
-                //f1.Dispose(); 
                 frm_menu f = new frm_menu();
                 f.Show();
                 this.Close();
@@ -230,6 +210,7 @@ namespace Picking
             Cursor.Current = Cursors.Default;
             lista_zonas_picking();
             lista_zonas_seleccionadas();
+            btn_continuar.Focus();
         }
 
         private void btn_picking_Click(object sender, EventArgs e)
@@ -245,16 +226,8 @@ namespace Picking
                     if (f1.ok == true)
                     {
                         frm_seleccionar_picking f = new frm_seleccionar_picking();
-                        //this.Visible = false;
                         this.Close();
                         f.Show();
-                        //if (f.ok == true)
-                        //{
-                        //    if (f.picking != 0)
-                        //    {
-
-                        //    }
-                        //}
                     }
                     else
                     {
@@ -268,15 +241,117 @@ namespace Picking
             {
                 frm_seleccionar_picking f = new frm_seleccionar_picking();
                 f.login = true;
-                //this.Visible = false;
                 this.Close();
                 f.Show();
             }
         }
 
-       
 
-     
+        private void btn_continuar_KeyDown(object sender, KeyEventArgs e)
+        {
+            //MessageBox.Show("Keycode: " + e.KeyCode.ToString() + ", KeyData: " + e.KeyData.ToString() + ", KeyValue: " + e.KeyValue.ToString());
+            switch (e.KeyCode.ToString())
+            {
+                case "D1":
+                    if (lstv_a.Items[0].Checked == true && lstv_b.Items[0].Checked == true)
+                    {
+                        lstv_a.Items[0].Checked = false;
+                        lstv_b.Items[0].Checked = false;
+                    }
+                    else
+                    {
+                        lstv_a.Items[0].Checked = true;
+                        lstv_b.Items[0].Checked = true;
+                    }
+                    break;
+                case "D2":
+                    if (lstv_a.Items[1].Checked == true && lstv_b.Items[1].Checked == true)
+                    {
+                        lstv_a.Items[1].Checked = false;
+                        lstv_b.Items[1].Checked = false;
+                    }
+                    else
+                    {
+                        lstv_a.Items[1].Checked = true;
+                        lstv_b.Items[1].Checked = true;
+                    }
+                    break;
+                case "D3":
+                    if (lstv_a.Items[2].Checked == true && lstv_b.Items[2].Checked == true)
+                    {
+                        lstv_a.Items[2].Checked = false;
+                        lstv_b.Items[2].Checked = false;
+                    }
+                    else
+                    {
+                        lstv_a.Items[2].Checked = true;
+                        lstv_b.Items[2].Checked = true;
+                    }
+                    break;
+                case "D4":
+                    if (lstv_a.Items[3].Checked == true && lstv_b.Items[3].Checked == true)
+                    {
+                        lstv_a.Items[3].Checked = false;
+                        lstv_b.Items[3].Checked = false;
+                    }
+                    else
+                    {
+                        lstv_a.Items[3].Checked = true;
+                        lstv_b.Items[3].Checked = true;
+                    }
+                    break;
+                case "D5":
+                    if (lstv_a.Items[4].Checked == true && lstv_b.Items[4].Checked == true)
+                    {
+                        lstv_a.Items[4].Checked = false;
+                        lstv_b.Items[4].Checked = false;
+                    }
+                    else
+                    {
+                        lstv_a.Items[4].Checked = true;
+                        lstv_b.Items[4].Checked = true;
+                    }
+                    break;
+                case "D6":
+                    if (lstv_a.Items[5].Checked == true && lstv_b.Items[5].Checked == true)
+                    {
+                        lstv_a.Items[5].Checked = false;
+                        lstv_b.Items[5].Checked = false;
+                    }
+                    else
+                    {
+                        lstv_a.Items[5].Checked = true;
+                        lstv_b.Items[5].Checked = true;
+                    }
+                    break;
+                case "D7":
+                    if (lstv_a.Items[6].Checked == true && lstv_b.Items[6].Checked == true)
+                    {
+                        lstv_a.Items[6].Checked = false;
+                        lstv_b.Items[6].Checked = false;
+                    }
+                    else
+                    {
+                        lstv_a.Items[6].Checked = true;
+                        lstv_b.Items[6].Checked = true;
+                    }
+                    break;
+                case "D8":
+                    if (lstv_a.Items[7].Checked == true && lstv_b.Items[7].Checked == true)
+                    {
+                        lstv_a.Items[7].Checked = false;
+                        lstv_b.Items[7].Checked = false;
+                    }
+                    else
+                    {
+                        lstv_a.Items[7].Checked = true;
+                        lstv_b.Items[7].Checked = true;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
 
     }
 }

@@ -57,14 +57,6 @@
   <ItemGroup>
     <Reference Include="Microsoft.WindowsCE.Forms" />
     <Reference Include="mscorlib" />
-    <Reference Include="Symbol, Version=2.8.0.0, Culture=neutral, PublicKeyToken=68ec8db391f150ca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>O:\Aplicaciones\Desarrollo\ADN\Librerias Motorola Symbol\Symbol.dll</HintPath>
-    </Reference>
-    <Reference Include="Symbol.Barcode, Version=2.9.0.0, Culture=neutral, PublicKeyToken=68ec8db391f150ca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>O:\Aplicaciones\Desarrollo\ADN\Librerias Motorola Symbol\Symbol.Barcode.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlClient, Version=3.0.3600.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
@@ -189,12 +181,6 @@
     <Compile Include="frm_menu.Designer.cs">
       <DependentUpon>frm_menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_pantalla_espera.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_pantalla_espera.Designer.cs">
-      <DependentUpon>frm_pantalla_espera.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_recepcion_cajas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,12 +217,6 @@
     <Compile Include="frm_supervisor.Designer.cs">
       <DependentUpon>frm_supervisor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_surtir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_surtir.Designer.cs">
-      <DependentUpon>frm_surtir.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_surtir_articulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,12 +228,6 @@
     </Compile>
     <Compile Include="frm_surtir_articulo_multiple.Designer.cs">
       <DependentUpon>frm_surtir_articulo_multiple.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_time_out.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_time_out.Designer.cs">
-      <DependentUpon>frm_time_out.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_zona.cs">
       <SubType>Form</SubType>
@@ -336,10 +310,6 @@
       <DependentUpon>frm_menu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_pantalla_espera.resx">
-      <DependentUpon>frm_pantalla_espera.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_recepcion_cajas.resx">
       <DependentUpon>frm_recepcion_cajas.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -364,20 +334,12 @@
       <DependentUpon>frm_supervisor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_surtir.resx">
-      <DependentUpon>frm_surtir.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_surtir_articulo.resx">
       <DependentUpon>frm_surtir_articulo.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_surtir_articulo_multiple.resx">
       <DependentUpon>frm_surtir_articulo_multiple.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_time_out.resx">
-      <DependentUpon>frm_time_out.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_zona.resx">
@@ -405,8 +367,6 @@
     <Content Include="Aviso_Evento_Log.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Symbol.Barcode.dll" />
-    <Content Include="Symbol.dll" />
     <None Include="Web References\PickingWS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

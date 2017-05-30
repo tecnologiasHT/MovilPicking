@@ -67,11 +67,13 @@
             this.txt_part_surtidas.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txt_part_surtidas.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.txt_part_surtidas.Location = new System.Drawing.Point(63, 28);
+            this.txt_part_surtidas.Multiline = true;
             this.txt_part_surtidas.Name = "txt_part_surtidas";
             this.txt_part_surtidas.ReadOnly = true;
             this.txt_part_surtidas.Size = new System.Drawing.Size(42, 24);
             this.txt_part_surtidas.TabIndex = 56;
             this.txt_part_surtidas.Text = "0";
+            this.txt_part_surtidas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -82,10 +84,10 @@
             // 
             // btn_salir
             // 
-            this.btn_salir.BackColor = System.Drawing.Color.Yellow;
+            this.btn_salir.BackColor = System.Drawing.Color.Red;
             this.btn_salir.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btn_salir.ForeColor = System.Drawing.Color.Black;
-            this.btn_salir.Location = new System.Drawing.Point(230, 155);
+            this.btn_salir.Location = new System.Drawing.Point(3, 155);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(67, 29);
             this.btn_salir.TabIndex = 44;
@@ -114,10 +116,11 @@
             // 
             // btn_aceptar
             // 
+            this.btn_aceptar.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_aceptar.Enabled = false;
             this.btn_aceptar.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.btn_aceptar.ForeColor = System.Drawing.Color.Black;
-            this.btn_aceptar.Location = new System.Drawing.Point(4, 156);
+            this.btn_aceptar.Location = new System.Drawing.Point(230, 156);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(72, 28);
             this.btn_aceptar.TabIndex = 12;
@@ -129,11 +132,13 @@
             this.txt_partidas.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txt_partidas.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.txt_partidas.Location = new System.Drawing.Point(161, 2);
+            this.txt_partidas.Multiline = true;
             this.txt_partidas.Name = "txt_partidas";
             this.txt_partidas.ReadOnly = true;
             this.txt_partidas.Size = new System.Drawing.Size(41, 24);
             this.txt_partidas.TabIndex = 11;
             this.txt_partidas.Text = "0";
+            this.txt_partidas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -171,10 +176,12 @@
             this.txt_prioridad.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.txt_prioridad.ForeColor = System.Drawing.Color.Red;
             this.txt_prioridad.Location = new System.Drawing.Point(63, 2);
+            this.txt_prioridad.Multiline = true;
             this.txt_prioridad.Name = "txt_prioridad";
             this.txt_prioridad.ReadOnly = true;
             this.txt_prioridad.Size = new System.Drawing.Size(42, 24);
             this.txt_prioridad.TabIndex = 68;
+            this.txt_prioridad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_cajas
             // 
@@ -182,11 +189,13 @@
             this.txt_cajas.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.txt_cajas.ForeColor = System.Drawing.Color.Red;
             this.txt_cajas.Location = new System.Drawing.Point(161, 30);
+            this.txt_cajas.Multiline = true;
             this.txt_cajas.Name = "txt_cajas";
             this.txt_cajas.ReadOnly = true;
             this.txt_cajas.Size = new System.Drawing.Size(42, 24);
             this.txt_cajas.TabIndex = 74;
             this.txt_cajas.Text = "0";
+            this.txt_cajas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -272,10 +281,11 @@
             // 
             // btn_recibir_cajas
             // 
+            this.btn_recibir_cajas.BackColor = System.Drawing.Color.Gold;
             this.btn_recibir_cajas.Enabled = false;
             this.btn_recibir_cajas.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.btn_recibir_cajas.ForeColor = System.Drawing.Color.Black;
-            this.btn_recibir_cajas.Location = new System.Drawing.Point(80, 156);
+            this.btn_recibir_cajas.Location = new System.Drawing.Point(151, 156);
             this.btn_recibir_cajas.Name = "btn_recibir_cajas";
             this.btn_recibir_cajas.Size = new System.Drawing.Size(73, 28);
             this.btn_recibir_cajas.TabIndex = 57;
@@ -285,20 +295,24 @@
             // txt_factura
             // 
             this.txt_factura.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txt_factura.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.txt_factura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txt_factura.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.txt_factura.ForeColor = System.Drawing.Color.Red;
-            this.txt_factura.Location = new System.Drawing.Point(5, 2);
+            this.txt_factura.Location = new System.Drawing.Point(3, 2);
+            this.txt_factura.Multiline = true;
             this.txt_factura.Name = "txt_factura";
             this.txt_factura.ReadOnly = true;
-            this.txt_factura.Size = new System.Drawing.Size(82, 23);
+            this.txt_factura.Size = new System.Drawing.Size(84, 23);
             this.txt_factura.TabIndex = 69;
+            this.txt_factura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_mover
             // 
+            this.btn_mover.BackColor = System.Drawing.SystemColors.Desktop;
             this.btn_mover.Enabled = false;
             this.btn_mover.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_mover.ForeColor = System.Drawing.Color.Black;
-            this.btn_mover.Location = new System.Drawing.Point(157, 156);
+            this.btn_mover.ForeColor = System.Drawing.Color.White;
+            this.btn_mover.Location = new System.Drawing.Point(76, 156);
             this.btn_mover.Name = "btn_mover";
             this.btn_mover.Size = new System.Drawing.Size(69, 28);
             this.btn_mover.TabIndex = 74;
@@ -321,7 +335,7 @@
             this.lst_cajas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lst_cajas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.lst_cajas.ForeColor = System.Drawing.Color.White;
-            this.lst_cajas.Location = new System.Drawing.Point(217, 32);
+            this.lst_cajas.Location = new System.Drawing.Point(217, 30);
             this.lst_cajas.Name = "lst_cajas";
             this.lst_cajas.Size = new System.Drawing.Size(91, 74);
             this.lst_cajas.TabIndex = 0;
@@ -330,7 +344,7 @@
             // 
             this.txt_leyenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txt_leyenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txt_leyenda.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.txt_leyenda.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Bold);
             this.txt_leyenda.ForeColor = System.Drawing.Color.Black;
             this.txt_leyenda.Location = new System.Drawing.Point(93, 2);
             this.txt_leyenda.Multiline = true;
@@ -338,6 +352,7 @@
             this.txt_leyenda.ReadOnly = true;
             this.txt_leyenda.Size = new System.Drawing.Size(86, 23);
             this.txt_leyenda.TabIndex = 84;
+            this.txt_leyenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnIndicadores
             // 

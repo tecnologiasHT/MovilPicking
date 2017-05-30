@@ -38,6 +38,7 @@
             this.ClientSize = new System.Drawing.Size(365, 203);
             this.Name = "frm_pantalla_espera";
             this.Text = "frm_pantalla_espera";
+            this.Load += new System.EventHandler(this.frm_pantalla_espera_Load);
             this.ResumeLayout(false);
 
         }

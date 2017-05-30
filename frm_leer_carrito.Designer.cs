@@ -63,11 +63,12 @@
             // 
             // lbltipo
             // 
-            this.lbltipo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular);
-            this.lbltipo.Location = new System.Drawing.Point(3, 0);
+            this.lbltipo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.lbltipo.Location = new System.Drawing.Point(2, 1);
             this.lbltipo.Name = "lbltipo";
             this.lbltipo.Size = new System.Drawing.Size(295, 23);
             this.lbltipo.Text = "Seleccionar Medio Para Surtir:";
+            this.lbltipo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btn_salir
             // 
@@ -83,9 +84,12 @@
             // 
             // btncaja
             // 
-            this.btncaja.Location = new System.Drawing.Point(5, 25);
+            this.btncaja.BackColor = System.Drawing.Color.Navy;
+            this.btncaja.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btncaja.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btncaja.Location = new System.Drawing.Point(3, 26);
             this.btncaja.Name = "btncaja";
-            this.btncaja.Size = new System.Drawing.Size(81, 50);
+            this.btncaja.Size = new System.Drawing.Size(97, 50);
             this.btncaja.TabIndex = 0;
             this.btncaja.Text = "Caja";
             this.btncaja.Click += new System.EventHandler(this.btncaja_Click);
@@ -101,7 +105,9 @@
             // 
             // btn_carrito
             // 
-            this.btn_carrito.Location = new System.Drawing.Point(108, 26);
+            this.btn_carrito.BackColor = System.Drawing.Color.Silver;
+            this.btn_carrito.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_carrito.Location = new System.Drawing.Point(106, 27);
             this.btn_carrito.Name = "btn_carrito";
             this.btn_carrito.Size = new System.Drawing.Size(86, 50);
             this.btn_carrito.TabIndex = 1;
@@ -110,9 +116,12 @@
             // 
             // btntarima
             // 
-            this.btntarima.Location = new System.Drawing.Point(215, 27);
+            this.btntarima.BackColor = System.Drawing.Color.SandyBrown;
+            this.btntarima.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btntarima.ForeColor = System.Drawing.Color.Black;
+            this.btntarima.Location = new System.Drawing.Point(198, 27);
             this.btntarima.Name = "btntarima";
-            this.btntarima.Size = new System.Drawing.Size(76, 50);
+            this.btntarima.Size = new System.Drawing.Size(97, 50);
             this.btntarima.TabIndex = 2;
             this.btntarima.Text = "Tarima";
             this.btntarima.Click += new System.EventHandler(this.btntarima_Click);

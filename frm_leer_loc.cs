@@ -20,97 +20,97 @@ namespace Picking
         public bool ok = false;
         static string localizacion="";
 
-        //declarar objetos Reader & ReaderData 
-         Symbol.Barcode.Reader barcodeReader = null;
-         Symbol.Barcode.ReaderData barcodeReaderData = null;
+       // //declarar objetos Reader & ReaderData 
+       //  Symbol.Barcode.Reader barcodeReader = null;
+       //  Symbol.Barcode.ReaderData barcodeReaderData = null;
 
-        //barcodeReader.ReadNotify += new EventHandler(barcodeReader_Read);  //eventHandler se dispara cuando hay una lectura.
+       // //barcodeReader.ReadNotify += new EventHandler(barcodeReader_Read);  //eventHandler se dispara cuando hay una lectura.
         
-        //EventHandler MyReadNotifyHandler = new EventHandler(MyReader_ReadNotify);
-        //EventHandler MyStatusNotifyHandler = new EventHandler(MyReader_StatusNotify);
-        //private System.EventHandler MyReadNotifyHandler = new EventHandler(MyReader_ReadNotify);
-        //private System.EventHandler MyStatusNotifyHandler = new EventHandler(MyReader_StatusNotify);
+       // //EventHandler MyReadNotifyHandler = new EventHandler(MyReader_ReadNotify);
+       // //EventHandler MyStatusNotifyHandler = new EventHandler(MyReader_StatusNotify);
+       // //private System.EventHandler MyReadNotifyHandler = new EventHandler(MyReader_ReadNotify);
+       // //private System.EventHandler MyStatusNotifyHandler = new EventHandler(MyReader_StatusNotify);
                
 
-        /// <summary>
-        /// Read notification handler
-        /// </summary>
-       private void MyReader_ReadNotify(object Sender, EventArgs e)
-        {
-            // Get ReaderData.
-            Symbol.Barcode.ReaderData nextReaderData = barcodeReader.GetNextReaderData();
-            switch (nextReaderData.Result)
-            {
-                case Symbol.Results.SUCCESS:
-                    // Handle the data from this read.
-                    //string MessageToDisplay;
-                    //MessageToDisplay = TheReaderData.Source + ": '" + TheReaderData.Text + "'";
-                       //Issue a read request.
-                    if (nextReaderData.Text.Trim() != "")
-                    {
-                        if (nextReaderData.Text.Trim() == localizacion)
-                        {
+       // /// <summary>
+       // /// Read notification handler
+       // /// </summary>
+       //private void MyReader_ReadNotify(object Sender, EventArgs e)
+       // {
+       //     // Get ReaderData.
+       //     Symbol.Barcode.ReaderData nextReaderData = barcodeReader.GetNextReaderData();
+       //     switch (nextReaderData.Result)
+       //     {
+       //         case Symbol.Results.SUCCESS:
+       //             // Handle the data from this read.
+       //             //string MessageToDisplay;
+       //             //MessageToDisplay = TheReaderData.Source + ": '" + TheReaderData.Text + "'";
+       //                //Issue a read request.
+       //             if (nextReaderData.Text.Trim() != "")
+       //             {
+       //                 if (nextReaderData.Text.Trim() == localizacion)
+       //                 {
                           
-                        }
-                        else
-                        {
-                            barcodeReader.Actions.Read(barcodeReaderData);
-                        }
-                    }
-                    else
-                    {
-                        barcodeReader.Actions.Read(barcodeReaderData);
-                    }
+       //                 }
+       //                 else
+       //                 {
+       //                     barcodeReader.Actions.Read(barcodeReaderData);
+       //                 }
+       //             }
+       //             else
+       //             {
+       //                 barcodeReader.Actions.Read(barcodeReaderData);
+       //             }
                   
-                    break;
-                case Symbol.Results.CANCELED:
-                    break;
-                default:
-                    //string sMsg = "Read Failed\n"
-                    //+ "Result = " + ((int)TheReaderData.Result).ToString("X8");
-                    break;
-            }
-        }
+       //             break;
+       //         case Symbol.Results.CANCELED:
+       //             break;
+       //         default:
+       //             //string sMsg = "Read Failed\n"
+       //             //+ "Result = " + ((int)TheReaderData.Result).ToString("X8");
+       //             break;
+       //     }
+       // }
 
-        void barcodeReader_Read(object sender, EventArgs e)
-        {
-            Symbol.Barcode.ReaderData nextReaderData = barcodeReader.GetNextReaderData();  //Get(s)NextReaderData                        
-            if (nextReaderData.Text.Trim() != "")
-            {
+       // void barcodeReader_Read(object sender, EventArgs e)
+       // {
+       //     Symbol.Barcode.ReaderData nextReaderData = barcodeReader.GetNextReaderData();  //Get(s)NextReaderData                        
+       //     if (nextReaderData.Text.Trim() != "")
+       //     {
                 
-                if (nextReaderData.Text.Trim() == lbl_loc.Text.Trim())
-                {
-                    System.Media.SystemSounds.Asterisk.Play();
-                    timer1.Enabled = false;
-                    txt_loc.Text = "";
-                    txt_loc.Text = nextReaderData.Text.Trim();
-                    ok = true;
-                    btn_Cerrar_Click(this, EventArgs.Empty);
-                    //this.Close();
-                }
-                else
-                {
-                    System.Media.SystemSounds.Exclamation.Play();
-                    MessageBox.Show("Localizacion no valida..");
-                    barcodeReader.Actions.Read(barcodeReaderData); //Espera para la siguiente lectura del lector.
-                }
-            }
+       //         if (nextReaderData.Text.Trim() == lbl_loc.Text.Trim())
+       //         {
+       //             System.Media.SystemSounds.Asterisk.Play();
+       //             timer1.Enabled = false;
+       //             txt_loc.Text = "";
+       //             txt_loc.Text = nextReaderData.Text.Trim();
+       //             ok = true;
+       //             btn_Cerrar_Click(this, EventArgs.Empty);
+       //             //this.Close();
+       //         }
+       //         else
+       //         {
+       //             System.Media.SystemSounds.Exclamation.Play();
+       //             MessageBox.Show("Localizacion no valida..");
+       //             barcodeReader.Actions.Read(barcodeReaderData); //Espera para la siguiente lectura del lector.
+       //         }
+       //     }
 
-        }
+       // }
 
 
 
-        /// <summary>
-        /// Status notification handler
-        /// </summary>
-        //static  void MyReader_StatusNotify(object Sender, EventArgs e)
-        //{
-        //    // Get current status. 
-        //    Symbol.Barcode.BarcodeStatus TheEvent = barcodeReader.GetNextStatus();   //
+       // /// <summary>
+       // /// Status notification handler
+       // /// </summary>
+       // //static  void MyReader_StatusNotify(object Sender, EventArgs e)
+       // //{
+       // //    // Get current status. 
+       // //    Symbol.Barcode.BarcodeStatus TheEvent = barcodeReader.GetNextStatus();   //
 
-        //    // Set event text in UI.
-        //    //this.EventTextBox.Text = TheEvent.Text;
-        //}
+       // //    // Set event text in UI.
+       // //    //this.EventTextBox.Text = TheEvent.Text;
+       // //}
 
         
 
@@ -129,7 +129,7 @@ namespace Picking
                 txt_loc.BackColor = Color.Yellow;
                 if (!desbloq)
                 {
-                    txt_loc.Text = "Esperando lectura...";
+                    txt_loc.Text = "Esperando lectura";
                 }
             }
             else
@@ -140,6 +140,8 @@ namespace Picking
                     txt_loc.Text = "------------------------";
                 }
             }
+            txt_loc.Focus();
+            txt_loc.SelectAll();
         }
 
         private void btnaceptar_Click(object sender, EventArgs e)
@@ -164,25 +166,25 @@ namespace Picking
             {
                 timer1.Enabled = false;
                 //Borrar la variables de la memoria
-                if (barcodeReader != null)
-                {                   
-                    // Remove read notification handler.                   
-                    barcodeReader.ReadNotify -= barcodeReader_Read;
-                    barcodeReader.Actions.Flush();
-                    barcodeReader.Actions.Disable();            
-                    barcodeReader.Dispose();
-                    barcodeReader = null; 
+                //if (barcodeReader != null)
+                //{                   
+                //    // Remove read notification handler.                   
+                //    barcodeReader.ReadNotify -= barcodeReader_Read;
+                //    barcodeReader.Actions.Flush();
+                //    barcodeReader.Actions.Disable();            
+                //    barcodeReader.Dispose();
+                //    barcodeReader = null; 
                   
-                }
-                // If we have a reader data. 
-                if (barcodeReaderData != null)
-                {
-                    // Free it up. 
-                    barcodeReaderData.Dispose();
-                    // Indicate we no longer have one. 
-                    barcodeReaderData = null;
+                //}
+                //// If we have a reader data. 
+                //if (barcodeReaderData != null)
+                //{
+                //    // Free it up. 
+                //    barcodeReaderData.Dispose();
+                //    // Indicate we no longer have one. 
+                //    barcodeReaderData = null;
 
-                }
+                //}
 
 
 
@@ -202,20 +204,20 @@ namespace Picking
                 {
                     ok = true;
                     timer1.Enabled = false;
-                    if (barcodeReader != null)
-                    {
-                        try
-                        {
-                            barcodeReader.Actions.Flush();
-                            barcodeReader.Actions.Disable();
-                            barcodeReader.Dispose();
-                            barcodeReaderData.Dispose();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al desactivar scaner" + ex.Message.ToString());
-                        }
-                    }
+                    //if (barcodeReader != null)
+                    //{
+                    //    try
+                    //    {
+                    //        barcodeReader.Actions.Flush();
+                    //        barcodeReader.Actions.Disable();
+                    //        barcodeReader.Dispose();
+                    //        barcodeReaderData.Dispose();
+                    //    }
+                    //    catch (Exception ex)
+                    //    {
+                    //        MessageBox.Show("Error al desactivar scaner" + ex.Message.ToString());
+                    //    }
+                    //}
 
                     this.Close();
                 }
@@ -250,57 +252,27 @@ namespace Picking
             //}
         }
 
-        private void btn_no_bin_Click(object sender, EventArgs e)
-        {
-            if (lbl_loc.Text.Trim().ToUpper() == "NO_BIN")
-            {
-                timer1.Enabled = false;
-                txt_loc.Focus();
-                txt_loc.Text ="NO_BIN";
-                //txt_loc.Focus();                
-                this.Close();
-            }
-            else
-            {
-                txt_loc.Focus();
-            }
-        }
+        //private void btn_no_bin_Click(object sender, EventArgs e)
+        //{
+        //    if (lbl_loc.Text.Trim().ToUpper() == "NO_BIN")
+        //    {
+        //        timer1.Enabled = false;
+        //        txt_loc.Focus();
+        //        txt_loc.Text ="NO_BIN";
+        //        //txt_loc.Focus();                
+        //        this.Close();
+        //    }
+        //    else
+        //    {
+        //        txt_loc.Focus();
+        //    }
+        //}
 
-        private void btn_desbloq_Click(object sender, EventArgs e)
-        {
-            return;
-            //frm_supervisor f1 = new frm_supervisor();
-            //timer1.Enabled = false;  
-            //f1.ShowDialog();
-            //if (f1.ok)
-            //{
-            //    if (f1.supervisor != "")
-            //    { 
-            //         f1.Dispose();
-            //         frm_desbloqearlocalizacion f2=new frm_desbloqearlocalizacion();
-            //         f2.localizacion = lbl_loc.Text.Trim();
-            //         f2.ShowDialog();
-            //         if (f2.ok)
-            //         {
-            //             desbloq = true;
-            //             btn_desbloq.Enabled = false;
-            //             btnaceptar.Enabled = true;   
-            //             txt_loc.Text = "";
-            //             txt_loc.Enabled = true;
-            //             txt_loc.ReadOnly = false;
-            //             txt_loc.Focus();
-                                              
-            //         }
-            //    }
-            //}
-            //timer1.Enabled = true; 
-        }
-   
         
         private void frm_leer_loc_Load(object sender, EventArgs e)
         {
             //verificar si existe excepcion registrada para la localizacio
-            if (Global.VerificarExcepcionesLocalizacion(lbl_loc.Text.Trim() ))
+            if (Global.VerificarExcepcionesLocalizacion(lbl_loc.Text.Trim()))
             {
                 //activar el campo de lectura
                 desbloq = true; 
@@ -312,16 +284,21 @@ namespace Picking
             }
             else
             {
-                barcodeReader = new Symbol.Barcode.Reader();
+                //barcodeReader = new Symbol.Barcode.Reader();
                 //sets up ReaderData to receive text and allocates max buffer size for barcode (7905 bytes).
-                barcodeReaderData = new Symbol.Barcode.ReaderData(Symbol.Barcode.ReaderDataTypes.Text, Symbol.Barcode.ReaderDataLengths.MaximumLabel);
+                //barcodeReaderData = new Symbol.Barcode.ReaderData(Symbol.Barcode.ReaderDataTypes.Text, Symbol.Barcode.ReaderDataLengths.MaximumLabel);
                 // Crear Data Reader
-                Symbol.Barcode.ReaderData MyReaderData = new Symbol.Barcode.ReaderData(Symbol.Barcode.ReaderDataTypes.Text, Symbol.Barcode.ReaderDataLengths.MaximumLabel);
-                barcodeReaderData = new Symbol.Barcode.ReaderData(Symbol.Barcode.ReaderDataTypes.Text, Symbol.Barcode.ReaderDataLengths.MaximumLabel);
-                barcodeReader.Actions.Enable();  //Activar el scanner.
-                barcodeReader.ReadNotify += new EventHandler(barcodeReader_Read);  //eventHandler se dispara cuando hay una lectura.
-                barcodeReader.Actions.Read(barcodeReaderData);  //Leer scnanner.  
+                //Symbol.Barcode.ReaderData MyReaderData = new Symbol.Barcode.ReaderData(Symbol.Barcode.ReaderDataTypes.Text, Symbol.Barcode.ReaderDataLengths.MaximumLabel);
+                //barcodeReaderData = new Symbol.Barcode.ReaderData(Symbol.Barcode.ReaderDataTypes.Text, Symbol.Barcode.ReaderDataLengths.MaximumLabel);
+                //barcodeReader.Actions.Enable();  //Activar el scanner.
+                //barcodeReader.ReadNotify += new EventHandler(barcodeReader_Read);  //eventHandler se dispara cuando hay una lectura.
+                //barcodeReader.Actions.Read(barcodeReaderData);  //Leer scnanner.  
             }
+            txt_loc.Focus();
+        }
+
+        private void txt_loc_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

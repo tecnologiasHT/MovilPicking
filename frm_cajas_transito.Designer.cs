@@ -43,17 +43,20 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Location = new System.Drawing.Point(-2, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.Text = "Factura:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lbl_factura
             // 
             this.lbl_factura.BackColor = System.Drawing.Color.White;
+            this.lbl_factura.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_factura.Location = new System.Drawing.Point(56, 9);
             this.lbl_factura.Name = "lbl_factura";
             this.lbl_factura.Size = new System.Drawing.Size(98, 20);
+            this.lbl_factura.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lst_cajas
             // 
@@ -78,17 +81,20 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(3, 33);
+            this.label3.Location = new System.Drawing.Point(6, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 20);
             this.label3.Text = "Cajas:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lbl_tot_cajas
             // 
             this.lbl_tot_cajas.BackColor = System.Drawing.Color.White;
+            this.lbl_tot_cajas.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_tot_cajas.Location = new System.Drawing.Point(56, 33);
             this.lbl_tot_cajas.Name = "lbl_tot_cajas";
             this.lbl_tot_cajas.Size = new System.Drawing.Size(98, 20);
+            this.lbl_tot_cajas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label4
             // 
@@ -110,17 +116,22 @@
             // 
             // btn_confirmar_envio
             // 
+            this.btn_confirmar_envio.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_confirmar_envio.Enabled = false;
-            this.btn_confirmar_envio.Location = new System.Drawing.Point(3, 149);
+            this.btn_confirmar_envio.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_confirmar_envio.Location = new System.Drawing.Point(163, 132);
             this.btn_confirmar_envio.Name = "btn_confirmar_envio";
-            this.btn_confirmar_envio.Size = new System.Drawing.Size(154, 32);
+            this.btn_confirmar_envio.Size = new System.Drawing.Size(148, 49);
             this.btn_confirmar_envio.TabIndex = 15;
             this.btn_confirmar_envio.Text = "F1-Confirmar Envio";
             this.btn_confirmar_envio.Click += new System.EventHandler(this.btn_confirmar_envio_Click);
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(220, 149);
+            this.btn_salir.BackColor = System.Drawing.Color.Red;
+            this.btn_salir.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_salir.ForeColor = System.Drawing.Color.White;
+            this.btn_salir.Location = new System.Drawing.Point(37, 149);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(91, 32);
             this.btn_salir.TabIndex = 23;

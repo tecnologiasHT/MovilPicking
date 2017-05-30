@@ -188,7 +188,7 @@ namespace Picking
                     }
                     else
                     {
-                        MessageBox.Show("Error al agregar caja");
+                        MessageBox.Show("Caja en uso, seleccione otra...");
                         return false;
                     }
                 }

@@ -57,19 +57,24 @@
             // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Enabled = false;
-            this.btn_aceptar.Location = new System.Drawing.Point(3, 131);
+            this.btn_aceptar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_aceptar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_aceptar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_aceptar.Location = new System.Drawing.Point(185, 131);
             this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(87, 50);
+            this.btn_aceptar.Size = new System.Drawing.Size(113, 50);
             this.btn_aceptar.TabIndex = 1;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(211, 131);
+            this.btn_salir.BackColor = System.Drawing.Color.Red;
+            this.btn_salir.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular);
+            this.btn_salir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_salir.Location = new System.Drawing.Point(3, 131);
             this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(87, 50);
+            this.btn_salir.Size = new System.Drawing.Size(113, 50);
             this.btn_salir.TabIndex = 2;
             this.btn_salir.Text = "Salir";
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);

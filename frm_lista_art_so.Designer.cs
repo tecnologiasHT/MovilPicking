@@ -44,17 +44,22 @@
             // 
             // btn_surtir
             // 
-            this.btn_surtir.Location = new System.Drawing.Point(3, 140);
+            this.btn_surtir.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_surtir.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_surtir.Location = new System.Drawing.Point(227, 140);
             this.btn_surtir.Name = "btn_surtir";
-            this.btn_surtir.Size = new System.Drawing.Size(79, 39);
+            this.btn_surtir.Size = new System.Drawing.Size(114, 39);
             this.btn_surtir.TabIndex = 1;
             this.btn_surtir.Text = "Surtir";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(261, 140);
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular);
+            this.button2.ForeColor = System.Drawing.Color.Snow;
+            this.button2.Location = new System.Drawing.Point(3, 140);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 39);
+            this.button2.Size = new System.Drawing.Size(114, 39);
             this.button2.TabIndex = 2;
             this.button2.Text = "Cerrar";
             this.button2.Click += new System.EventHandler(this.button2_Click);

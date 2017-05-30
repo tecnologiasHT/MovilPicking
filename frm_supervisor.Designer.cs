@@ -41,16 +41,16 @@
             this.txt_codigo.Location = new System.Drawing.Point(3, 65);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.PasswordChar = '*';
-            this.txt_codigo.Size = new System.Drawing.Size(324, 40);
+            this.txt_codigo.Size = new System.Drawing.Size(292, 40);
             this.txt_codigo.TabIndex = 0;
             this.txt_codigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_codigo_KeyDown);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(3, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 49);
+            this.label1.Size = new System.Drawing.Size(292, 49);
             this.label1.Text = "Clave Autorización";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -65,7 +65,7 @@
             this.btn_Salir.BackColor = System.Drawing.Color.Red;
             this.btn_Salir.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btn_Salir.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Salir.Location = new System.Drawing.Point(105, 125);
+            this.btn_Salir.Location = new System.Drawing.Point(97, 111);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(102, 48);
             this.btn_Salir.TabIndex = 2;
