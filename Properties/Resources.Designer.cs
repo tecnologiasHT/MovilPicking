@@ -61,7 +61,7 @@ namespace Picking.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=172.16.1.42\pruebas;Initial Catalog=ApHecort;Persist Security Info=True;User ID=desarrollo;Password=desarrollo;Connect Timeout=400;Application Name=PICKING.
+        ///   Looks up a localized string similar to Data Source=172.16.1.40\produccion;Initial Catalog=ApHecort;Persist Security Info=True;User ID=desarrollo;Password=desarrollo;Connect Timeout=400;Application Name=PICKING.
         /// </summary>
         public static string connectionstring {
             get {
