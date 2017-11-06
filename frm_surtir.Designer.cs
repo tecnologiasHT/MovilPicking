@@ -41,6 +41,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(239, 25);
             this.label1.Text = "1602222222";
+            this.label1.ParentChanged += new System.EventHandler(this.label1_ParentChanged);
             // 
             // label2
             // 

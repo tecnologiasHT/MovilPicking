@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="connectionstring" xml:space="preserve">
-    <value>Data Source=172.16.1.40\Produccion;Initial Catalog=ApHecort;Persist Security Info=True;User ID=desarrollo;Password=desarrollo;Connect Timeout=400;Application Name=PICKING</value>
+    <value>Data Source=172.16.1.40\produccion;Initial Catalog=ApHecort;Persist Security Info=True;User ID=desarrollo;Password=desarrollo;Connect Timeout=400;Application Name=PICKING</value>
   </data>
   <data name="idzonap2" xml:space="preserve">
     <value>9</value>
@@ -128,7 +128,7 @@
     <value />
   </data>
   <data name="ver" xml:space="preserve">
-    <value>27.01.2017</value>
+    <value>11.05.2017</value>
   </data>
   <data name="volcajapicking" xml:space="preserve">
     <value>56043.75</value>

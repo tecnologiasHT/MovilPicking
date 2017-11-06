@@ -20,39 +20,6 @@ namespace Picking
         public bool login = false;
 
 
-        //bool registrar_acceso(string usuario, int idzona, string area, int op)
-        //{
-        //    //Registra el acceso en el historial de accesos
-        //    //ADN_Registrar_Acceso_Usuarios
-        //    //@Usuario varchar(50),
-        //    //@IdZona int,
-        //    //@Area varchar(50)	
-        //    SqlCommand cmd = new SqlCommand();
-        //    cmd.Connection = Global.cn;
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.CommandText = "ADN_Registrar_Acceso_Usuarios";
-        //    cmd.Parameters.AddWithValue("@Usuario", usuario);
-        //    cmd.Parameters.AddWithValue("@IdZona", idzona);
-        //    cmd.Parameters.AddWithValue("@Area", area);
-        //    cmd.Parameters.AddWithValue("@OP", op);
-
-
-        //    try
-        //    {
-        //        if (Global.cn.State == ConnectionState.Closed)
-        //        {
-        //            Global.cn.Open();
-        //        }
-        //        cmd.ExecuteNonQuery();
-        //        return true;
-        //    }
-        //    catch
-        //    {
-        //        MessageBox.Show("Error al registrar acceso en el sistema");
-        //        return false;
-        //    }
-
-        //}
         void lista_zonas_usuario()
         {
             DataSet dt;
@@ -64,7 +31,6 @@ namespace Picking
                     if (dt != null)
                     {
                         grd_zonas.DataSource = dt.Tables[0];
-                        //grd_zonas.bin
                     }
                 }
                 else if (Global.picking == 2)
@@ -73,11 +39,9 @@ namespace Picking
                   if (dt != null)
                   {
                       grd_zonas.DataSource = dt.Tables[0];
-                      //grd_zonas.bin
                   }
                 }
-
-                
+               
             }
             catch
             { 
@@ -94,9 +58,14 @@ namespace Picking
 
         private void frm_menu_Load(object sender, EventArgs e)
         {
-            this.Text = "HT Picking         Ver " + Properties.Resources.ver; 
+            this.Text = "HT Picking Ver: " + Properties.Resources.ver; 
            
-            statusBar1.Text = Global.usuario + " " + Global.nombre;
+            statusBar1.Text = Global.usuario + " - " + Global.nombre;
+            if(Properties.Resources.connectionstring.ToUpper().Contains("PRUEBAS"))
+            {
+                statusBar1.Text += " ***PRUEBAS***";
+            }
+
             lbl_picking.Text = Global.picking.ToString();
             if (Global.picking == 1)
             {
@@ -109,11 +78,6 @@ namespace Picking
             }
         }
 
-        private void frm_menu_Activated(object sender, EventArgs e)
-        {
-            //txt_seccion.Text = Global.zona;
-            //txt_area.Text = Global.area;  
-        }
 
         private void btn_surtimiento_Click(object sender, EventArgs e)
         {            
@@ -136,28 +100,12 @@ namespace Picking
                     btn_salir_Click(this, EventArgs.Empty);  
                     break;                
                 case Keys.F2:
-                    //btn_validacion_Click(this, EventArgs.Empty);   
                     break;                
-                //case Keys.F3:
-                //    btn_cajas_Click(this, EventArgs.Empty);  
-                //    break;
-                //case Keys.F4:
-                //    btn_cajas_Click(this, EventArgs.Empty);  
-                //    break;
                 default:
                     break;
             }
         }
 
-        private void btn_validacion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_cajas_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
@@ -192,9 +140,6 @@ namespace Picking
                 MessageBox.Show("Error al cerrar sistema.." + ex.Message.ToString()); 
             }
 
-            
-             
-            
         }
 
         private void btn_cambiar_secc_Click(object sender, EventArgs e)
@@ -205,34 +150,16 @@ namespace Picking
             f.ShowDialog();
             f.Dispose();
             lista_zonas_usuario();
-            
-            
         }
 
-        private void frm_menu_Closing(object sender, CancelEventArgs e)
-        {
-            //if (registrar_acceso(Global.usuario, Global.idzona, Global.area,2))
-            //{
-            //    Application.Exit();
-            //}
-            //else
-            //{
-            //    Application.Exit();
-            //}
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-                
                 frm_seleccionar_picking f = new frm_seleccionar_picking();
                 f.login = true;
                 this.Close();
                 f.Show();
-
-            
-            
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -260,11 +187,6 @@ namespace Picking
             System.Media.SystemSounds.Question.Play();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-         
-
-        }
 
         private void linkIndicadores_Click(object sender, EventArgs e)
         {

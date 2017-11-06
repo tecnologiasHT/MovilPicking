@@ -165,7 +165,7 @@
             this.btn_salir.BackColor = System.Drawing.Color.Red;
             this.btn_salir.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btn_salir.ForeColor = System.Drawing.Color.White;
-            this.btn_salir.Location = new System.Drawing.Point(222, 140);
+            this.btn_salir.Location = new System.Drawing.Point(4, 137);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(90, 39);
             this.btn_salir.TabIndex = 53;
@@ -187,13 +187,15 @@
             // txt_cve
             // 
             this.txt_cve.BackColor = System.Drawing.Color.White;
-            this.txt_cve.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txt_cve.Location = new System.Drawing.Point(158, 0);
+            this.txt_cve.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_cve.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.txt_cve.Location = new System.Drawing.Point(179, 1);
             this.txt_cve.Multiline = true;
             this.txt_cve.Name = "txt_cve";
             this.txt_cve.ReadOnly = true;
-            this.txt_cve.Size = new System.Drawing.Size(90, 21);
+            this.txt_cve.Size = new System.Drawing.Size(93, 18);
             this.txt_cve.TabIndex = 58;
+            this.txt_cve.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_factura
             // 
@@ -201,19 +203,20 @@
             this.lbl_factura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbl_factura.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_factura.ForeColor = System.Drawing.Color.Red;
-            this.lbl_factura.Location = new System.Drawing.Point(75, -2);
+            this.lbl_factura.Location = new System.Drawing.Point(74, 1);
             this.lbl_factura.Multiline = true;
             this.lbl_factura.Name = "lbl_factura";
             this.lbl_factura.ReadOnly = true;
-            this.lbl_factura.Size = new System.Drawing.Size(67, 23);
+            this.lbl_factura.Size = new System.Drawing.Size(91, 18);
             this.lbl_factura.TabIndex = 61;
+            this.lbl_factura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Navy;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(1, 0);
+            this.label4.Location = new System.Drawing.Point(1, 1);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 18);
             this.label4.Text = "Factura #";
@@ -229,7 +232,7 @@
             this.txt_diag.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_diag.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.txt_diag.ForeColor = System.Drawing.Color.Black;
-            this.txt_diag.Location = new System.Drawing.Point(148, 0);
+            this.txt_diag.Location = new System.Drawing.Point(170, 0);
             this.txt_diag.Multiline = true;
             this.txt_diag.Name = "txt_diag";
             this.txt_diag.ReadOnly = true;
@@ -243,7 +246,7 @@
             this.btn_excep.BackColor = System.Drawing.Color.Yellow;
             this.btn_excep.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btn_excep.ForeColor = System.Drawing.Color.Black;
-            this.btn_excep.Location = new System.Drawing.Point(95, 140);
+            this.btn_excep.Location = new System.Drawing.Point(104, 137);
             this.btn_excep.Name = "btn_excep";
             this.btn_excep.Size = new System.Drawing.Size(120, 39);
             this.btn_excep.TabIndex = 67;
@@ -255,7 +258,7 @@
             this.btnsurtir.BackColor = System.Drawing.Color.LawnGreen;
             this.btnsurtir.Enabled = false;
             this.btnsurtir.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnsurtir.Location = new System.Drawing.Point(3, 141);
+            this.btnsurtir.Location = new System.Drawing.Point(233, 137);
             this.btnsurtir.Name = "btnsurtir";
             this.btnsurtir.Size = new System.Drawing.Size(81, 39);
             this.btnsurtir.TabIndex = 70;
@@ -296,10 +299,11 @@
             this.lblTotPartidas.BackColor = System.Drawing.Color.Black;
             this.lblTotPartidas.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lblTotPartidas.ForeColor = System.Drawing.Color.Lime;
-            this.lblTotPartidas.Location = new System.Drawing.Point(250, 1);
+            this.lblTotPartidas.Location = new System.Drawing.Point(273, 1);
             this.lblTotPartidas.Name = "lblTotPartidas";
             this.lblTotPartidas.Size = new System.Drawing.Size(41, 20);
             this.lblTotPartidas.Text = "0";
+            this.lblTotPartidas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frm_leer_articulos1
             // 

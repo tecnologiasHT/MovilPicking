@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lstv_b = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,7 +51,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Font = new System.Drawing.Font("Arial", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 57);
+            this.label2.Location = new System.Drawing.Point(98, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(21, 25);
             this.label2.Text = "A";
@@ -65,6 +66,7 @@
             this.btn_continuar.TabIndex = 9;
             this.btn_continuar.Text = "Aceptar";
             this.btn_continuar.Click += new System.EventHandler(this.btn_continuar_Click);
+            this.btn_continuar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_continuar_KeyDown);
             // 
             // btn_picking
             // 
@@ -90,13 +92,15 @@
             // 
             // lstv_a
             // 
+            this.lstv_a.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.lstv_a.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lstv_a.CheckBoxes = true;
-            this.lstv_a.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular);
+            this.lstv_a.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
             this.lstv_a.ForeColor = System.Drawing.Color.White;
-            this.lstv_a.Location = new System.Drawing.Point(27, 2);
+            this.lstv_a.FullRowSelect = true;
+            this.lstv_a.Location = new System.Drawing.Point(23, 1);
             this.lstv_a.Name = "lstv_a";
-            this.lstv_a.Size = new System.Drawing.Size(110, 143);
+            this.lstv_a.Size = new System.Drawing.Size(75, 144);
             this.lstv_a.TabIndex = 16;
             this.lstv_a.View = System.Windows.Forms.View.SmallIcon;
             // 
@@ -105,41 +109,55 @@
             this.label1.BackColor = System.Drawing.Color.Gold;
             this.label1.Font = new System.Drawing.Font("Arial", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(278, 63);
+            this.label1.Location = new System.Drawing.Point(175, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 25);
             this.label1.Text = "B";
             // 
             // lstv_b
             // 
+            this.lstv_b.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.lstv_b.BackColor = System.Drawing.Color.Gold;
             this.lstv_b.CheckBoxes = true;
-            this.lstv_b.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular);
+            this.lstv_b.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
             this.lstv_b.ForeColor = System.Drawing.Color.Black;
-            this.lstv_b.Location = new System.Drawing.Point(169, 2);
+            this.lstv_b.FullRowSelect = true;
+            this.lstv_b.Location = new System.Drawing.Point(202, 0);
             this.lstv_b.Name = "lstv_b";
-            this.lstv_b.Size = new System.Drawing.Size(110, 143);
+            this.lstv_b.Size = new System.Drawing.Size(75, 144);
             this.lstv_b.TabIndex = 19;
             this.lstv_b.View = System.Windows.Forms.View.SmallIcon;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(139, 8);
+            this.panel1.Location = new System.Drawing.Point(134, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(28, 130);
+            this.panel1.Size = new System.Drawing.Size(28, 144);
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Silver;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(2, 125);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(24, 20);
+            this.label8.Text = "---";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Silver;
             this.label7.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(2, 6);
+            this.label7.Location = new System.Drawing.Point(2, 5);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(24, 20);
             this.label7.Text = "---";
@@ -150,7 +168,7 @@
             this.label6.BackColor = System.Drawing.Color.Silver;
             this.label6.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(2, 26);
+            this.label6.Location = new System.Drawing.Point(2, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(24, 20);
             this.label6.Text = "---";
@@ -161,7 +179,7 @@
             this.label5.BackColor = System.Drawing.Color.Silver;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(2, 46);
+            this.label5.Location = new System.Drawing.Point(2, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 20);
             this.label5.Text = "---";
@@ -172,7 +190,7 @@
             this.label4.BackColor = System.Drawing.Color.Silver;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(2, 66);
+            this.label4.Location = new System.Drawing.Point(2, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 20);
             this.label4.Text = "---";
@@ -183,7 +201,7 @@
             this.label3.BackColor = System.Drawing.Color.Silver;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(2, 86);
+            this.label3.Location = new System.Drawing.Point(2, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 20);
             this.label3.Text = "---";
@@ -194,7 +212,7 @@
             this.label9.BackColor = System.Drawing.Color.Silver;
             this.label9.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(2, 106);
+            this.label9.Location = new System.Drawing.Point(2, 105);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 20);
             this.label9.Text = "---";
@@ -240,5 +258,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -1133,7 +1133,8 @@ namespace Picking
                         {
                             //Global.obtener_zona_area_por_surtir(lbl_factura.Text.Trim(), out id_zona, out area, out tot_arts);
                             //Global.agregar_status_zona_area(Global.invcnbr, id_zona, area, "SO");
-                            MessageBox.Show("Tiene " + tot_arts.ToString() + " Articulos Para Surtir En La Zona:" + id_zona.ToString() + " " + area);
+                            //MessageBox.Show("Tiene " + tot_ps.ToString() + " Articulos Para Surtir En La Zona:" + id_zona.ToString() + " " + area);
+                            MessageBox.Show("Tiene " + tot_ps.ToString() + " Articulos Para Surtir de la Factura: "+lbl_factura.Text.Trim());
                             frm_leer_articulos1 f = new frm_leer_articulos1();
                             f.invcnbr = Global.invcnbr;                            
                             f.lbl_factura.Text = invcnbr.Trim();

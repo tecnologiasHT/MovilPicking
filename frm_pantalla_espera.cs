@@ -15,5 +15,10 @@ namespace Picking
         {
             InitializeComponent();
         }
+
+        private void frm_pantalla_espera_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

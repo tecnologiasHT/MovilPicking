@@ -67,7 +67,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 3);
+            this.label1.Location = new System.Drawing.Point(0, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 16);
             this.label1.Text = "Por Surtir:";
@@ -89,7 +89,7 @@
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(77, 3);
+            this.label3.Location = new System.Drawing.Point(77, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.Text = "Surtiendo:";
@@ -126,9 +126,9 @@
             this.lblTotal.BackColor = System.Drawing.Color.Black;
             this.lblTotal.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
             this.lblTotal.ForeColor = System.Drawing.Color.Lime;
-            this.lblTotal.Location = new System.Drawing.Point(72, 77);
+            this.lblTotal.Location = new System.Drawing.Point(4, 77);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(63, 33);
+            this.lblTotal.Size = new System.Drawing.Size(131, 33);
             this.lblTotal.Text = "999";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -137,9 +137,9 @@
             this.label11.BackColor = System.Drawing.Color.Black;
             this.label11.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(72, 57);
+            this.label11.Location = new System.Drawing.Point(4, 57);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 19);
+            this.label11.Size = new System.Drawing.Size(131, 19);
             this.label11.Text = "Total:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -153,6 +153,7 @@
             this.lblExtra.Size = new System.Drawing.Size(67, 34);
             this.lblExtra.Text = "999";
             this.lblExtra.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblExtra.Visible = false;
             // 
             // label9
             // 
@@ -164,6 +165,7 @@
             this.label9.Size = new System.Drawing.Size(67, 18);
             this.label9.Text = "Extra:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label9.Visible = false;
             // 
             // lblAvance
             // 
@@ -212,7 +214,7 @@
             // 
             this.label13.BackColor = System.Drawing.Color.Black;
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(3, 96);
+            this.label13.Location = new System.Drawing.Point(3, 58);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 16);
             this.label13.Text = "Por Validar:";
@@ -222,7 +224,7 @@
             // 
             this.label14.BackColor = System.Drawing.Color.Black;
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(79, 97);
+            this.label14.Location = new System.Drawing.Point(79, 59);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(75, 16);
             this.label14.Text = "Validando:";
@@ -233,7 +235,7 @@
             this.lblPorValidar.BackColor = System.Drawing.Color.Black;
             this.lblPorValidar.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.lblPorValidar.ForeColor = System.Drawing.Color.Red;
-            this.lblPorValidar.Location = new System.Drawing.Point(3, 113);
+            this.lblPorValidar.Location = new System.Drawing.Point(3, 75);
             this.lblPorValidar.Name = "lblPorValidar";
             this.lblPorValidar.Size = new System.Drawing.Size(75, 25);
             this.lblPorValidar.Text = "999";
@@ -244,7 +246,7 @@
             this.lblValidando.BackColor = System.Drawing.Color.Black;
             this.lblValidando.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.lblValidando.ForeColor = System.Drawing.Color.Lime;
-            this.lblValidando.Location = new System.Drawing.Point(79, 114);
+            this.lblValidando.Location = new System.Drawing.Point(79, 76);
             this.lblValidando.Name = "lblValidando";
             this.lblValidando.Size = new System.Drawing.Size(74, 24);
             this.lblValidando.Text = "999";
@@ -266,6 +268,7 @@
             this.label4.Size = new System.Drawing.Size(150, 16);
             this.label4.Text = "Hoy.";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.Visible = false;
             // 
             // label6
             // 
@@ -276,6 +279,7 @@
             this.label6.Size = new System.Drawing.Size(150, 16);
             this.label6.Text = "Mañana.";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label6.Visible = false;
             // 
             // lbl_ps_manana
             // 
@@ -287,6 +291,7 @@
             this.lbl_ps_manana.Size = new System.Drawing.Size(76, 20);
             this.lbl_ps_manana.Text = "999";
             this.lbl_ps_manana.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_ps_manana.Visible = false;
             // 
             // lbl_so_manana
             // 
@@ -298,6 +303,7 @@
             this.lbl_so_manana.Size = new System.Drawing.Size(74, 20);
             this.lbl_so_manana.Text = "999";
             this.lbl_so_manana.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_so_manana.Visible = false;
             // 
             // tab1
             // 
@@ -314,6 +320,10 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tabPage1.Controls.Add(this.lblValidando);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.lblPorValidar);
+            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.lbl_so_manana);
             this.tabPage1.Controls.Add(this.label1);
@@ -323,10 +333,6 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.lblSurtiendo);
-            this.tabPage1.Controls.Add(this.lblValidando);
-            this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.lblPorValidar);
-            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(301, 146);

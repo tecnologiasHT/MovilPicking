@@ -50,6 +50,9 @@
             // 
             // btncerrar
             // 
+            this.btncerrar.BackColor = System.Drawing.Color.Red;
+            this.btncerrar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btncerrar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btncerrar.Location = new System.Drawing.Point(99, 57);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(112, 42);

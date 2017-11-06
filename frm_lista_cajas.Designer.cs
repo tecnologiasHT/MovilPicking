@@ -62,7 +62,7 @@
             this.btnagregar.BackColor = System.Drawing.Color.Blue;
             this.btnagregar.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnagregar.ForeColor = System.Drawing.Color.White;
-            this.btnagregar.Location = new System.Drawing.Point(74, 137);
+            this.btnagregar.Location = new System.Drawing.Point(74, 136);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(70, 48);
             this.btnagregar.TabIndex = 2;
@@ -74,7 +74,7 @@
             this.btn_salir.BackColor = System.Drawing.Color.Red;
             this.btn_salir.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btn_salir.ForeColor = System.Drawing.Color.White;
-            this.btn_salir.Location = new System.Drawing.Point(225, 138);
+            this.btn_salir.Location = new System.Drawing.Point(225, 136);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(62, 48);
             this.btn_salir.TabIndex = 3;

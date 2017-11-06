@@ -17,8 +17,8 @@ namespace Picking
             InitializeComponent();
         }
         //declarar objetos Reader & ReaderData 
-        Symbol.Barcode.Reader barcodeReader = null;
-        Symbol.Barcode.ReaderData barcodeReaderData = null;
+        //Symbol.Barcode.Reader barcodeReader = null;
+        //Symbol.Barcode.ReaderData barcodeReaderData = null;
         public bool excepcion = false;
 
         public bool desbloq = false;
@@ -1226,17 +1226,17 @@ namespace Picking
         bool obtener_datos_articulo()
         { 
             
-            StringBuilder cad = new StringBuilder();
-            cad.Append("SELECT ID_Surt_Art, InvcNbr, InvtId, Descr, Unidad, Localizacion, CantSol, CantSurtida, Usuario, Completo, Nodisp, Pickstatus, IdZona, IdArea, Status_surt");
-            cad.AppendLine(" FROM   ADN_Lista_Surtimiento_Maestro");
-            cad.AppendLine(" WHERE ID_Surt_Art=@ID_Surt_Art");
+            //StringBuilder cad = new StringBuilder();
+            //cad.Append("SELECT ID_Surt_Art, InvcNbr, InvtId, Descr, Unidad, Localizacion, CantSol, CantSurtida, Usuario, Completo, Nodisp, Pickstatus, IdZona, IdArea, Status_surt");
+            //cad.AppendLine(" FROM   ADN_Lista_Surtimiento_Maestro");
+            //cad.AppendLine(" WHERE ID_Surt_Art=@ID_Surt_Art");
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = Global.cn;
             DataSet dt = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter();
             DataRow dr;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = cad.ToString();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "ADN_Obtener_Datos_Articulo_Surtimiento";
             cmd.Connection = Global.cn;
             cmd.Parameters.AddWithValue("@ID_Surt_Art",ID_Surt_Art);            
            
@@ -1269,9 +1269,9 @@ namespace Picking
                                 }
                             }
 
-                            if (!string.IsNullOrEmpty(dr["Descr"].ToString() ))
+                            if (!string.IsNullOrEmpty(dr["Descr"].ToString()) && !string.IsNullOrEmpty(dr["InvtId"].ToString()))
                             {
-                                txt_desc.Text = dr["Descr"].ToString();
+                                txt_desc.Text =dr["InvtId"].ToString().Trim()+": "+ dr["Descr"].ToString();
                             }
                             if (!string.IsNullOrEmpty(dr["Localizacion"].ToString()))
                             {
@@ -1281,6 +1281,7 @@ namespace Picking
                             {
                                 lbl_unidad.Text = dr["Unidad"].ToString();
                             }
+                            
                             
                             if (!string.IsNullOrEmpty(dr["CantSol"].ToString()))
                             {
@@ -1539,9 +1540,7 @@ namespace Picking
 
                             if (txt_codigo.Text != "")
                             {
-                                //MessageBox.Show("Clave De Articulo Incorrecta..", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                                //txt_cve_art.Text = "";
-                                //txt_cve_art.Focus();                                
+                                                         
                                 Cursor.Current = Cursors.WaitCursor;
                                 if (validar_codigo(invtid.Trim().ToUpper(), txt_codigo.Text.Trim().ToUpper()))
                                 {
@@ -1578,7 +1577,6 @@ namespace Picking
                                     txt_codigo.Text = "";
                                     txt_cant_codigo.Text = "";
                                     txt_codigo.Focus();
-                                    //txt_cant_codigo.Focus();
 
                                 }
                             }
@@ -1599,78 +1597,22 @@ namespace Picking
           }
             
         }
-        private void barcodeReader_Read(object sender, EventArgs e)
-        {
-
-            try
-            {
-                Symbol.Barcode.ReaderData nextReaderData = barcodeReader.GetNextReaderData();  //Get(s)NextReaderData
-                if (nextReaderData.Text.Trim() != "")
-                {
-                    Global.fecha_ultima_actividad = Global.FechaHoraActual();
-                    if (validar_codigo(invtid.Trim().ToUpper(), nextReaderData.Text.Trim().ToUpper()))
-                    {
-                        Cursor.Current = Cursors.Default;
-                        if (tot_surtir <= 0)
-                        {
-                            //timer_timeout.Enabled = false;
-                            System.Media.SystemSounds.Exclamation.Play();
-                            t1.Enabled = false;
-                            this.Close();
-                        }
-                        else
-                        {
-                            barcodeReader.Actions.Read(barcodeReaderData); //Espera para la siguiente lectura del lector.
-                        }
-
-                    }
-                    else
-                    {
-                        Cursor.Current = Cursors.Default;
-                        barcodeReader.Actions.Read(barcodeReaderData); //Espera para la siguiente lectura del lector.
-                    }
-                }
-                else
-                {
-                    barcodeReader.Actions.Read(barcodeReaderData); //Espera para la siguiente lectura del lector.
-                }
-            }
-            catch
-            { 
-            
-            }
-         
-        }
+       
 
         private void frm_surtir_articulo_Load(object sender, EventArgs e)
         {
             if (obtener_datos_articulo())
             {
-                //   tab_captura.Enabled = true;
-                    //txt_codigo.Enabled = false;
-                    //txt_cant_codigo.Enabled = true;
-                    //txt_cve_art.Enabled = false;
-                    //txt_cant_art.Enabled = false;
-                    //txt_codigo.Focus();
-                    //CODIGO PARA ACTIVAR EL SCANER
-                    barcodeReader = new Symbol.Barcode.Reader();
-                    //sets up ReaderData to receive text and allocates max buffer size for barcode (7905 bytes).
-                    barcodeReaderData = new Symbol.Barcode.ReaderData(Symbol.Barcode.ReaderDataTypes.Text, Symbol.Barcode.ReaderDataLengths.MaximumLabel);
-                    //Crear Data Reader
-                    Symbol.Barcode.ReaderData MyReaderData = new Symbol.Barcode.ReaderData(Symbol.Barcode.ReaderDataTypes.Text, Symbol.Barcode.ReaderDataLengths.MaximumLabel);
-                    barcodeReaderData = new Symbol.Barcode.ReaderData(Symbol.Barcode.ReaderDataTypes.Text, Symbol.Barcode.ReaderDataLengths.MaximumLabel);
-                    barcodeReader.Actions.Enable();  //Activar el scanner.
-                    //AGREGAR EL EVENTO QUE SE EJECUTARA CADA VEZ QUE SE RECIBA UNA LECTURA
-                    barcodeReader.ReadNotify += new EventHandler(barcodeReader_Read);  //eventHandler se dispara cuando hay una lectura.
-                    barcodeReader.Actions.Read(barcodeReaderData);  //Leer scnanner. 
-                //}
+                
             }
+            txt_codigo.Text = "";
+            txt_codigo.Focus();
         }
 
         private void txt_cant_art_GotFocus(object sender, EventArgs e)
         {
             txt_cant_art.BackColor = Color.Yellow;
-            txt_cant_art.SelectAll(); 
+
   
         }
 
@@ -1811,23 +1753,23 @@ namespace Picking
                 t1.Enabled = false;
                 //timer_timeout.Enabled = false;
                 //Borrar la variables de la memoria
-                if (barcodeReader != null)
-                {
-                    // Remove read notification handler.                   
-                    barcodeReader.ReadNotify -= barcodeReader_Read;
-                    barcodeReader.Actions.Flush();
-                    barcodeReader.Actions.Disable();
-                    barcodeReader.Dispose();
-                    barcodeReader = null;
-                }
-                // If we have a reader data. 
-                if (barcodeReaderData != null)
-                {
-                    // Free it up. 
-                    barcodeReaderData.Dispose();
-                    // Indicate we no longer have one. 
-                    barcodeReaderData = null;
-                }
+                //if (barcodeReader != null)
+                //{
+                //    // Remove read notification handler.                   
+                //    barcodeReader.ReadNotify -= barcodeReader_Read;
+                //    barcodeReader.Actions.Flush();
+                //    barcodeReader.Actions.Disable();
+                //    barcodeReader.Dispose();
+                //    barcodeReader = null;
+                //}
+                //// If we have a reader data. 
+                //if (barcodeReaderData != null)
+                //{
+                //    // Free it up. 
+                //    barcodeReaderData.Dispose();
+                //    // Indicate we no longer have one. 
+                //    barcodeReaderData = null;
+                //}
             }
             catch
             { 
@@ -1875,27 +1817,27 @@ namespace Picking
 
         private void timer_timeout_Tick(object sender, EventArgs e)
         {
-            if (Global.TimeOutPicking())
-            {
-                //timer_timeout.Enabled = false;
-                frm_time_out f = new frm_time_out();
-                f.ShowDialog();
-                f.Dispose();
-                if (Global.timeout)
-                {
-                    //Global.finalizar_partida(ID_Surt_Art);
-                    //this.Close();
-                    System.Media.SystemSounds.Exclamation.Play();     
-                }
-                else
-                {
-                    //timer_timeout.Enabled = true;
-                }
-            }
-            else
-            {
-                //timer_timeout.Enabled = true;
-            }
+            //if (Global.TimeOutPicking())
+            //{
+            //    //timer_timeout.Enabled = false;
+            //    frm_time_out f = new frm_time_out();
+            //    f.ShowDialog();
+            //    f.Dispose();
+            //    if (Global.timeout)
+            //    {
+            //        //Global.finalizar_partida(ID_Surt_Art);
+            //        //this.Close();
+            //        System.Media.SystemSounds.Exclamation.Play();     
+            //    }
+            //    else
+            //    {
+            //        //timer_timeout.Enabled = true;
+            //    }
+            //}
+            //else
+            //{
+            //    //timer_timeout.Enabled = true;
+            //}
 
 
         }
@@ -1955,6 +1897,11 @@ namespace Picking
             //    t1.Enabled = true;
             //}
             //f1.Dispose();
+        }
+
+        private void txt_desc_GotFocus(object sender, EventArgs e)
+        {
+            txt_codigo.Focus();
         }
 
       

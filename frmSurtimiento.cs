@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
-//[DllImport("CoreDll.dll")]
 
 namespace Picking
 {
@@ -20,7 +19,6 @@ namespace Picking
         {
             InitializeComponent();
         }
-        //SqlConnection cn = new SqlConnection(Properties.Resources.connectionstring);
         public string invcnbr;
         public string status; //status de la orden
         public string custid; //clave del cliente
@@ -28,7 +26,6 @@ namespace Picking
         public string tipo_cliente; //tipo de cliente
         public int prioridad_surt; //indica la prioridad 
         public bool env_junto; // esta variable nos indica si la factura debe surtirse con otras facturas
-        //public int tot_env_junto;
         public int tot_ps_area;//total de articulos por surtir del area
         public int tot_ps_zona; //total de articulos por surtir de la zona
         public int tot_cajas;
@@ -38,8 +35,6 @@ namespace Picking
         public bool parar = false;
         public string status_zona_factura=""; //Se utiliza para guardar el status actual de la factura en la zona
         public bool alerta = false;
-        //DateTime fecha;
-        //public Thread t1 = new Thread(Global.verificar_satus_factura);
        PickingWS.WebService1 ws=new Picking.PickingWS.WebService1();
         
        
@@ -108,7 +103,6 @@ namespace Picking
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Error al obtener total de facturas activas en zona" + ex.Message.ToString());
                 return false;
             }
 
@@ -174,7 +168,6 @@ namespace Picking
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Error al obtener total de facturas activas en zona" + ex.Message.ToString());
                 return false;
             }
 
@@ -211,65 +204,7 @@ namespace Picking
         }
 
 
-        //bool mover_cajas(string factura, int id_zona)
-        //{
-        //    //PROCEDURE ADN_Surtimiento_mover_cajas	
-        //    //@InvcNbr VARCHAR(20),
-        //    //@Id_Zona int
-        //    SqlCommand cmd = new SqlCommand();
-        //    cmd.Connection = Global.cn;
-        //    //DataSet dt = new DataSet();
-        //    SqlDataAdapter da = new SqlDataAdapter();
-        //    //DataRow dr;
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.CommandText = "ADN_Surtimiento_mover_cajas";
-        //    cmd.Parameters.AddWithValue("@InvcNbr", factura);
-        //    cmd.Parameters.AddWithValue("@Id_Zona", id_zona);
-        //    try
-        //    {
-        //        if (Global.cn.State == ConnectionState.Closed)
-        //        {
-        //            Global.cn.Open();
-        //        }
-
-        //        cmd.ExecuteNonQuery();
-        //        return true;
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error al mover cajas.." + ex.Message.ToString());
-        //        return false;
-        //    }
-
-        //}
-
-        //int facturas_por_enviar(int idzona, int sigzona)
-        //{
-        //    //ADN_Obtener_tot_facturas_turno
-        //    //@Id_Zona int
-        //    SqlCommand cmd = new SqlCommand();
-        //    SqlDataAdapter da = new SqlDataAdapter();
-        //    cmd.Connection = Global.cn;
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.CommandText = "ADN_Obtener_tot_facturas_turno";
-        //    cmd.Parameters.AddWithValue("@IdZona", idzona);
-        //    cmd.Parameters.AddWithValue("@SigZona", sigzona);
-        //    try
-        //    {
-        //        if (Global.cn.State == ConnectionState.Closed)
-        //        {
-        //            Global.cn.Open();
-        //        }
-        //        return (Convert.ToInt16(cmd.ExecuteScalar().ToString()));
-
-        //    }
-        //    catch
-        //    {
-        //        return -1;
-        //    }
-
-        //}
+      
 
         string obtener_factura_enviar(int idzona, int sigzona  )
         {
@@ -310,16 +245,7 @@ namespace Picking
            //@IdPicking INT,
            //@Usuario VARCHAR(50)
 
-            //SqlDataAdapter da = new SqlDataAdapter();
             DataSet dt = new DataSet();
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.Connection = Global.cn;
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.CommandText = "ADN_Obtener_lista_art_surtir2";
-            //cmd.Parameters.AddWithValue("@InvcNbr", factura.Trim());
-            //cmd.Parameters.AddWithValue("@IdPicking", Global.picking);
-            //cmd.Parameters.AddWithValue("@Usuario", Global.usuario);
-            //da.SelectCommand = cmd;
             try
             {
                dt=Global.lista_art_surtir(factura);
@@ -446,8 +372,6 @@ namespace Picking
         
         }
              
-
-
         void agregar_cajas()
         {
 
@@ -458,77 +382,13 @@ namespace Picking
             f.Dispose();
         }
 
-        //int tot_cajas_pend_recibir_zona(int idzona)
-        //{ 
-        ////[dbo].[ADN_tot_cajas_pend_recibir_zona] 
-        ////  @Id_Zona int
-        //    SqlCommand cmd = new SqlCommand();
-        //    //SqlDataAdapter da = new SqlDataAdapter();
-        //    cmd.Connection = Global.cn;
-        //    //DataSet dt = new DataSet();
-        //    //DataRow dr;
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.CommandText = "ADN_tot_cajas_pend_recibir_zona";
-        //    cmd.Parameters.AddWithValue("@Id_Zona", idzona);
-            
-        //    try
-        //    {
-        //        if (Global.cn.State == ConnectionState.Closed)
-        //        {
-        //            Global.cn.Open();
-        //        }
-        //        return Convert.ToInt16(cmd.ExecuteScalar().ToString());
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error al obtener total de cajas por recibir " + ex.Message.ToString());
-        //        return 0;
-        //    }
-
-
-        //}
-        
-        //int tot_cajas_pend_recibir(string factura,int idzona)
-        //{ 
-        ////ADN_tot_cajas_pend_recibir 	
-        ////@InvcNbr varchar(20),
-        ////@Id_Zona int
-        //    SqlCommand cmd = new SqlCommand();
-        //    //SqlDataAdapter da = new SqlDataAdapter();
-        //    cmd.Connection = Global.cn;
-        //    //DataSet dt = new DataSet();
-        //    //DataRow dr;
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.CommandText = "ADN_tot_cajas_pend_recibir";
-        //    cmd.Parameters.AddWithValue("@Id_Zona", idzona);
-        //    cmd.Parameters.AddWithValue("@InvcNbr", factura);
-        //    try
-        //    {
-        //        if (Global.cn.State == ConnectionState.Closed)
-        //        {
-        //            Global.cn.Open();
-        //        }
-        //        return Convert.ToInt16(cmd.ExecuteScalar().ToString());
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error al obtener total de cajas por recibir " + ex.Message.ToString());
-        //        return 0;
-        //    }
-
-
-        //}
-
         string obtener_factura_pend(int idzona)
         {
             //obtiene el numero de la factura de las cajas pendientes de recepcion
             // ADN_Obtener_factura_cajas_pend_rec	
             //@Id_Zona INT
             SqlCommand cmd = new SqlCommand();
-            //SqlDataAdapter da = new SqlDataAdapter();
             cmd.Connection = Global.cn;
-            //DataSet dt = new DataSet();
-            //DataRow dr;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "ADN_Obtener_factura_cajas_pend_rec";
             cmd.Parameters.AddWithValue("@Id_Zona", idzona);
@@ -551,49 +411,11 @@ namespace Picking
 
 
         }
-        
-
-        //bool actualiza_status_zona(string invcnbr, int idzona, string status)
-        //{
-        //    //ADN_Actualizar_status_zona	
-        //    //@InvcNbr VARCHAR(10),
-        //    //@IdZona INT,
-        //    //@Status VARCHAR(20)
-        //    SqlCommand cmd = new SqlCommand();
-        //    //SqlDataAdapter da = new SqlDataAdapter();
-        //    cmd.Connection = Global.cn;
-        //    //DataSet dt = new DataSet();
-        //    //DataRow dr;
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.CommandText = "ADN_Actualizar_status_zona";
-        //    cmd.Parameters.AddWithValue("@InvcNbr", invcnbr);
-        //    cmd.Parameters.AddWithValue("@IdZona", idzona);
-        //    cmd.Parameters.AddWithValue("@Status", status);
-        //    cmd.Parameters.AddWithValue("@Usuario", Global.usuario );
-        //    try
-        //    {
-        //        if (Global.cn.State == ConnectionState.Closed)
-        //        {
-        //            Global.cn.Open();
-        //        }
-        //        cmd.ExecuteNonQuery();
-        //        return true;
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error al actualizar status de factura.." + ex.Message.ToString());
-        //        return false;
-        //    }
-
-
-        //}
 
         void surtimiento()
         {
             //procedimiento para abrir la pantalla donde se capturan los articulos
             Cursor.Current = Cursors.WaitCursor;
-            //tot_cajas_factura(txt_factura.Text);
             tot_cajas = Global.tot_cajas_factura(Global.invcnbr);
             if (tot_cajas == 0)
             {
@@ -613,7 +435,6 @@ namespace Picking
             f.invcnbr = invcnbr.Trim();
             f.invcnbr_status = false;
             f.lbl_factura.Text = invcnbr.Trim();
-            //f.lbl_shipperid.Text = lbl_shiperid.Text;
             f.timer1.Enabled = true;  
             f.ShowDialog();
             f.Dispose();
@@ -632,8 +453,6 @@ namespace Picking
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter da = new SqlDataAdapter();
             cmd.Connection = Global.cn;
-            //DataSet dt = new DataSet();
-            //DataRow dr;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "ADN_verificar_zona_transito";
             cmd.Parameters.AddWithValue("@IdZona", idzona);
@@ -664,7 +483,6 @@ namespace Picking
                 timer1.Enabled = false;
                 timer2.Enabled = false;
                 datos_factura(factura);
-                //tot_cajas_factura(factura);
                 tot_cajas = Global.tot_cajas_factura(Global.invcnbr);
                 lista_cajas();
                 int pend = 0;
@@ -672,14 +490,12 @@ namespace Picking
                 btn_ver.Enabled = true;
                 btn_cajas.Enabled = true;
                 btn_ver.Enabled = true;
-                //if (env_junto == false)
-                //{
+
                 Global.totales_ps_area_zona(Global.invcnbr, out tot_ps_area, out tot_ps_zona);
                 if (tot_ps_area > 0)
                 {
                     timer2.Enabled = false;
                     timer1.Enabled = false; 
-                    //MessageBox.Show("Surtir FACTURA:" + invcnbr, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     lbl_msj.Text = "Surtir FACTURA:" + invcnbr;
                     btn_aceptar.Enabled = true;
                     btn_aceptar.Focus();
@@ -687,7 +503,6 @@ namespace Picking
                 }
                 else if (tot_ps_zona > 0)
                 {
-                    //MessageBox.Show("Todavia existen articulos por surtir en su ZONA de la factura:" + invcnbr, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     btn_aceptar.Enabled = false;
                     lbl_msj.Visible = true;
                     lbl_msj.Text = "Espere un momento.., hay articulos pendientes por surtir en su ZONA";
@@ -697,33 +512,8 @@ namespace Picking
                 }
                 else
                 {
-                    // if (verificar_transito(Global.idzona,Global.invcnbr  ))
-                    //{
-                    //    lbl_msj.Text = "Espere un momento.., Existen cajas en transito en Su Zona";
-
-                    //    MessageBox.Show("Existen cajas en transito en Su Zona: " + txt_factura.Text, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                    //    frm_cajas_transito f = new frm_cajas_transito();
-                    //    f.lbl_factura.Text = txt_factura.Text;
-                    //    //tot_cajas_factura(txt_factura.Text.Trim());
-                    //    tot_cajas = Global.tot_cajas_factura(Global.invcnbr);
-                    //    f.lbl_tot_cajas.Text = tot_cajas.ToString();
-                    //    f.invcnbr = txt_factura.Text;
-                    //    f.lbl_msj.Text = "Esperando para enviar cajas de la factura, Click en Confirmar Envio al terminar";
-                    //    f.status = "E";
-                    //    //f.btn_recibido.Enabled =false;
-                    //    f.btn_confirmar_envio.Enabled = true;
-                    //    f.timer1.Enabled = true;  
-                    //    this.Visible = false;
-                    //    f.ShowDialog();
-                    //    this.Visible = true;
-
-                    //    //timer1.Enabled = true;
-
-
-                    //}
-                    // limpiar_datos();
+                    
                     timer1.Enabled = true;
-                    //timer2.Enabled = true; 
                     return false;
                   
                 }
@@ -736,73 +526,6 @@ namespace Picking
         
         }
 
-        //int Tot_articulos_status_zona(string factura,int idzona,string status)
-        //{
-        //    //Obtiene el total de articulos con el status especificado, en la zona especificada
-        //    //ADN_obtener_tot_articulos_status_zona	
-        //    //@InvcNbr VARCHAR(10),
-        //    //@IdZona  INT,
-        //    //@Status varchar(10)
-        //    SqlCommand cmd = new SqlCommand();
-        //    SqlDataAdapter da = new SqlDataAdapter();
-        //    cmd.Connection = Global.cn;
-        //    //DataSet dt = new DataSet();
-        //    //DataRow dr;
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.CommandText = "ADN_obtener_tot_articulos_status_zona";
-        //    cmd.Parameters.AddWithValue("@IdZona", idzona);
-        //    cmd.Parameters.AddWithValue("@InvcNbr",factura );
-        //    cmd.Parameters.AddWithValue("@Status",status );
-        //    //da.SelectCommand = cmd;
-        //    try
-        //    {
-        //        if (Global.cn.State == ConnectionState.Closed)
-        //        {
-        //            Global.cn.Open();
-        //        }
-
-        //        return Convert.ToInt16(cmd.ExecuteScalar().ToString());
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error al obtener total de articulos con status: " + status +" " + ex.Message.ToString()   )  ;
-        //        return -1;
-        //    }
-
-        //}
-
-
-        //int tot_art_ps_picking2(string factura)
-        //{
-        //    //ADN_Obtener_tot_art_ps_picking2             
-        //    //@InvcNbr VARCHAR(20)
-
-        //    SqlCommand cmd = new SqlCommand();
-        //    SqlDataAdapter da = new SqlDataAdapter();
-        //    cmd.Connection = Global.cn;
-           
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.CommandText = "ADN_Obtener_tot_art_ps_picking2";            
-        //    cmd.Parameters.AddWithValue("@InvcNbr",factura );
-        //    try
-        //    {
-        //        if (Global.cn.State == ConnectionState.Closed)
-        //        {
-        //            Global.cn.Open(); 
-        //        }
-        //        return  Convert.ToInt16(cmd.ExecuteScalar().ToString());   
-        //    }
-        //    catch
-        //    {
-        //        MessageBox.Show("Error al obtener total de articulos por surtir en picking2..");  
-        //        return -1;
-        //    }
-            
-            
-           
-
-        //}
-
         string factura_pend_usuario()
         { 
         // ADN_factura_pend_usuario
@@ -814,7 +537,6 @@ namespace Picking
             cmd.CommandText = "ADN_factura_pend_usuario";
             cmd.Parameters.AddWithValue("@IdZona",Global.idzona );
             cmd.Parameters.AddWithValue("@Usuario", Global.usuario);
-            //da.SelectCommand = cmd;
             try
             {               
                 if (Global.cn.State == ConnectionState.Closed)
@@ -837,7 +559,6 @@ namespace Picking
             }
             catch(Exception ex)
             {
-                //MessageBox.Show("Error al obtener factura pendiente del usuario " + ex.Message.ToString());  
                 return "";
             }
 
@@ -938,10 +659,7 @@ namespace Picking
            //@Picking int
           //@Status varchar(20)
             SqlCommand cmd = new SqlCommand();
-            //SqlDataAdapter da = new SqlDataAdapter();
             cmd.Connection = Global.cn;
-            //DataSet dt = new DataSet();
-            //DataRow dr;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "ADN_agregar_status_zonas";
             cmd.Parameters.AddWithValue("@InvcNbr", invcnbr);
@@ -979,7 +697,6 @@ namespace Picking
         //@Usuario VARCHAR(50
 
             SqlCommand cmd = new SqlCommand();
-            //SqlDataAdapter da = new SqlDataAdapter();
             cmd.Connection = Global.cn;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "ADN_tot_status_zona_usuario";
@@ -1014,7 +731,6 @@ namespace Picking
             //@IdZona INT,
             //@status VARCHAR(50)
             SqlCommand cmd = new SqlCommand();
-            //SqlDataAdapter da = new SqlDataAdapter();
             cmd.Connection = Global.cn;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "ADN_tot_status_zona";
@@ -1043,7 +759,6 @@ namespace Picking
         {
             //[dbo].[ADN_obtener_disponibilidad_zona2]
             SqlCommand cmd = new SqlCommand();
-            //SqlDataAdapter da = new SqlDataAdapter();
             cmd.Connection = Global.cn;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "ADN_obtener_disponibilidad_zona2";
@@ -1073,7 +788,6 @@ namespace Picking
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter da = new SqlDataAdapter();
             cmd.Connection = Global.cn;
-            
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "ADN_obtener_disponibilidad_zona";
             cmd.Parameters.AddWithValue("@Id_Zona",idzona);
@@ -1102,7 +816,6 @@ namespace Picking
             //ADN_Obtener_lista_cajas 
             //@InvcNbr varchar(15)
             DataSet dt = new DataSet();
-            //DataRow dr;
             SqlDataAdapter ad = new SqlDataAdapter();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = Global.cn;
@@ -1128,13 +841,11 @@ namespace Picking
                                 }
                                 
                             }
-                            //tot_cajas_factura(txt_factura.Text.Trim());
                             tot_cajas = Global.tot_cajas_factura(Global.invcnbr);
    
                         }
                     }
                 }
-                //dg_cajas.DataSource = dt.Tables[0];
 
 
             }
@@ -1180,7 +891,6 @@ namespace Picking
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = Global.cn;
             DataSet dt = new DataSet();
-            //DataRow dr;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "ADN_surtimiento_avanzar_zona";
             cmd.Parameters.AddWithValue("@InvcNbr", InvcNbr);
@@ -1284,8 +994,6 @@ namespace Picking
            SqlDataAdapter da = new SqlDataAdapter();
            DataRow dr;
            
-               //Cursor.Current = Cursors.WaitCursor;   
-               //SqlCommand cmd = new SqlCommand();
                cmd.Connection = Global.cn;             
                cmd.CommandType = CommandType.StoredProcedure;
                cmd.CommandText = "ADN_obtener_factura_area";
@@ -1295,7 +1003,6 @@ namespace Picking
                da.SelectCommand = cmd;
                try
                {
-               //dg_ordenes.DataBindings.Clear();   
                da.Fill(dt);
                if (dt.Tables.Count != 0)
                {
@@ -1304,8 +1011,7 @@ namespace Picking
                        dr = dt.Tables[0].Rows[0];
                        if (!string.IsNullOrEmpty(dr["InvcNbr"].ToString()))
                        {
-                           //txt_factura.Text = dr["InvcNbr"].ToString().Trim();
-                           //btn_factura.Tag = dr["InvcNbr"].ToString().Trim();
+
                            txt_factura.Text   = dr["InvcNbr"].ToString().Trim();
                            invcnbr = dr["InvcNbr"].ToString().Trim();
                            Global.invcnbr = dr["InvcNbr"].ToString().Trim();
@@ -1335,14 +1041,7 @@ namespace Picking
                                txt_partidas.Text = "0";
                            }
 
-                           //if (!string.IsNullOrEmpty(dr["env_junto"].ToString().Trim()))
-                           //{
-                           //    env_junto = Convert.ToBoolean(dr["env_junto"].ToString().Trim());
-                           //}
-                           //else
-                           //{
-                           //    env_junto = false;
-                           //}
+                          
 
                            //Status_area
                            if (!string.IsNullOrEmpty(dr["Status_area"].ToString().Trim()))
@@ -1361,7 +1060,6 @@ namespace Picking
                        {
                            lbl_msj.Text = "Espere..Obteniendo factura para surtir";
                            lbl_msj.Visible = true;  
-                           //timer1.Enabled = true; 
                            return false;
 
                        }
@@ -1382,7 +1080,6 @@ namespace Picking
                        }
                        else
                        {
-                           //timer1.Enabled = true;
                            lbl_msj.Text = "Espere..Obteniendo factura para surtir";
                            lbl_msj.Visible = true;
                            return false;
@@ -1391,7 +1088,6 @@ namespace Picking
                }
                else
                {
-                   //timer1.Enabled = true;
                    lbl_msj.Text = "Espere..Obteniendo factura para surtir";
                    lbl_msj.Visible = true;
                    return false;
@@ -1401,14 +1097,12 @@ namespace Picking
            {
                dt.Dispose();
                da.Dispose();
-               //btn_obtener.Enabled = true;  
                Cursor.Current = Cursors.Default;
                cmd.Dispose();
                lbl_msj.Visible = true;  
                lbl_msj.Text = "Error al obtener Factura." ;
                return false;
            }
-             //Cursor.Current = Cursors.Default;
 
        }
 
@@ -1450,7 +1144,6 @@ namespace Picking
                               invcnbr = dr["InvcNbr"].ToString().Trim();
                               Global.factura = dr["InvcNbr"].ToString().Trim();
                               Global.invcnbr = invcnbr;
-                              //datos_factura();
                               if (!string.IsNullOrEmpty(dr["Prioridad"].ToString().Trim()))
                               {
                                   prioridad_surt = Convert.ToInt16(dr["Prioridad"].ToString().Trim());
@@ -1511,15 +1204,12 @@ namespace Picking
            {
                dt.Dispose();
                da.Dispose();
-               //btn_ver.Enabled = true;  
-               //Cursor.Current = Cursors.Default;
                cmd.Dispose(); 
                lbl_msj.Text= "Error al obtener factura..." + ex.Message.ToString();
                System.Media.SystemSounds.Beep.Play();
                System.Threading.Thread.Sleep(5000);   
                return false;
            }
-             //Cursor.Current = Cursors.Default;
       
       }
 
@@ -1599,13 +1289,10 @@ namespace Picking
           {
               dt.Dispose();
               da.Dispose();
-              //btn_ver.Enabled = true;  
-              //Cursor.Current = Cursors.Default;
               cmd.Dispose();
               lbl_msj.Text = "Error al obtener factura... + " + ex.Message.ToString();
               return false;
           }
-          //Cursor.Current = Cursors.Default;
 
       }
 
@@ -1848,8 +1535,6 @@ namespace Picking
                {
                    dt.Dispose();
                }
-               //da.Dispose();
-               //cmd.Dispose();
                lbl_msj.Visible = true;  
                lbl_msj.Text=  "Error al obtener datos de Factura.." ;  
            }
@@ -1891,18 +1576,15 @@ namespace Picking
                             MessageBox.Show("Seleccionar Carrito o Canasta Correctamente","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Exclamation ,MessageBoxDefaultButton.Button1   );
                             this.Visible = true;
                             timer1.Enabled = true;
-                            //timer_timeout.Enabled = true; 
                             return;
                         }
                         
                     }
                     
-                    //agregar_status_zona(Global.invcnbr, Global.idzona, "SO");
                     frm_leer_articulos1 f = new frm_leer_articulos1();
                     f.invcnbr = invcnbr.Trim();                  
                     
                     f.lbl_factura.Text = invcnbr.Trim();
-                    //f.lbl_shipperid.Text = lbl_shiperid.Text;                   
                     f.tipocaja = "CARRITO";                    
                     f.timer1.Enabled = true;
                     alerta = false;
@@ -1916,7 +1598,6 @@ namespace Picking
                 }
                 else
                 {
-                    //timer_timeout.Enabled = true; 
                     MessageBox.Show("No Hay Articulos Para Surtir En PICKING2");  
                 
                 }
@@ -2001,17 +1682,6 @@ namespace Picking
             {
                 timer_timeout.Enabled = false;  
             }
-            //fecha = Global.FechaHoraActual();  
-            //if (Global.idzona == 4 || Global.idzona == 3)
-            //{
-            //    timer_surtimiento.Enabled = true;
-            //}
-            //else
-            //{
-            //    timer_surtimiento.Enabled = false;  
-            //}
-            //lbl_zona.Text = Global.zona ;
-            //lbl_area.Text = Global.area ;
             timer1.Enabled = true;  
 
         }
@@ -2019,7 +1689,6 @@ namespace Picking
 
         private void frmSurtimiento_KeyDown(object sender, KeyEventArgs e)
         {
-            //MessageBox.Show(e.KeyCode.ToString());    
             switch (e.KeyCode.ToString())
             {
                 case "F1":
@@ -2031,17 +1700,7 @@ namespace Picking
                         }
                             break;
                     }
-                case "F2":
-                    {
-
-                        if (btn_recibir_cajas.Enabled == true)
-                        {
-                         //btn_aceptar_Click(this, EventArgs.Empty); 
-                            //btn_operacion_Click(this, EventArgs.Empty);                            
-                        
-                        }
-                        break;
-                    }
+                
                 case "F3":
                     {
 
@@ -2096,7 +1755,7 @@ namespace Picking
                     int tot_fact_activas = Global.tot_facturas_activas_zonas();
                     if (tot_fact_activas > 0)
                     {
-                        //obtenemos la factura que esta activa                        /
+                        //obtenemos la factura que esta activa                        
                         string fac = "";
                         fac = Global.factura_pend_zonas_usuario();
                         if (fac != "")
@@ -2150,14 +1809,11 @@ namespace Picking
 
                         if (fac == "" || fac==null)
                         {
-                           // fac = Global.factura_por_surtir_zonas();
-                            //PRUEBAS
                            fac = Global.factura_por_surtir_zonas_orden1();
                         }
 
                             if (fac != "")
                             {
-                                //int idzona = Global.obtener_siguiente_zona_por_surtir_P1(fac);
                                 Global.fecha_ultima_actividad = Global.FechaHoraActual();
                                 int idzona = Global.obtener_zona_inicio_picking1();
                                 if (idzona > 0)
@@ -2210,20 +1866,18 @@ namespace Picking
                             if (Global.tot_facturas_turno_zonas() > 0)
                             {
                                 //obtener la factura en turno de la zona o zonas seleccionadas
-
                                 if (Global.obtener_factura_turno_zonas(out fac, out IdZona))
                                 {
                                     if (fac != "" && fac != null)
                                     {
                                         //antes de tomar la factura verificar otra vez que no haya otra factura activa
-                                                                                
                                         if (Global.tot_facturas_activas_zonas() == 0)
                                         {
                                             if (IdZona > 0)
                                             {
                                                 int sigzona = Global.obtener_siguiente_zona_por_surtir_P1(fac);
                                                 if (sigzona > 0)
-                                                {                                                   
+                                                {
                                                     if (sigzona == 8 || sigzona == 7 || sigzona == 6 || sigzona == 5)
                                                     {
                                                         MessageBox.Show("La Factura: " + fac + " Todavia tiene articulos por surtir en la Zona: " + sigzona.ToString(), "ALERTA!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
@@ -2282,7 +1936,6 @@ namespace Picking
                                         else //if(Global.tot_facturas_activas_zona(Global.idzona)==0)
                                         {
                                             //obtener la factura que ya esta activa en la zona
-                                            //fac = Global.factura_pend_zona(Global.idzona);
                                             fac = Global.factura_pend_zonas();
                                             if (fac != "")
                                             {
@@ -2345,7 +1998,6 @@ namespace Picking
                                 if (idzona > 0)
                                 {
                                     //PARA ELIMINAR
-                                    //Global.agregar_status_zona(fac, idzona, "TRAN");
                                     Global.fecha_ultima_actividad = Global.FechaHoraActual(); 
                                     System.Media.SystemSounds.Exclamation.Play();
                                     txt_factura.Text = fac.Trim();
@@ -2410,7 +2062,6 @@ namespace Picking
                         if (fac != "" && fac != null)
                         {
                             //Global.actualizar_status_zonas(fac);
-                            //agregar_status_zona(invcnbr, IdZonaP2, "SO");  
                             Global.fecha_ultima_actividad = Global.FechaHoraActual(); 
                             System.Media.SystemSounds.Exclamation.Play();
                             txt_factura.Text = fac;
@@ -2426,7 +2077,6 @@ namespace Picking
                             {
                                 Global.fecha_ultima_actividad = Global.FechaHoraActual(); 
                                 System.Media.SystemSounds.Exclamation.Play();
-                                //agregar_status_zona(invcnbr, IdZonaP2, "SO");
                                 datos_factura(Global.invcnbr);
                                 Global.agregar_turno_factura(Global.invcnbr, 1, IdZonaP2);
                                 timer1.Enabled = true;
@@ -2494,7 +2144,6 @@ namespace Picking
                 }
                    
                 txt_factura.Text = Global.invcnbr;
-                //datos_factura(Global.invcnbr);
                 //obtener el status actual de la factura
                 string status1 = Global.obtener_status_factura(Global.invcnbr);
                 if (status1 != "")
@@ -2532,9 +2181,6 @@ namespace Picking
                         limpiar_datos();
                         timer1.Enabled = true;
                         return;
-
-                        //Global.cancelar_turno_factura(Global.invcnbr);
-                        //limpiar_datos();
 
                     }
                    
@@ -2593,7 +2239,6 @@ namespace Picking
                     }
                     else
                     {
-                        //alerta = false;
                         btn_recibir_cajas.Enabled = false;
                     }
                     
@@ -2623,16 +2268,12 @@ namespace Picking
                                         {
                                             alerta = true;
                                             System.Media.SystemSounds.Hand.Play();
-                                            //lbl_msj.Text = "";
-                                            //lbl_msj.Visible = false; 
                                             msjalerta();
                                             lbl_msj.Text = "SURTIR " + tot_arts.ToString() + " PARTIDAS " + "En ZONA " + idzona1.ToString() + " " + area;
                                             msjalerta();
-                                            
                                             btn_aceptar.Enabled = true;
                                             Global.idzona = idzona1;
                                             btn_aceptar.Enabled = true;
-                                            //lbl_msj.Visible = true;  
                                             timer1.Enabled = true;
                                             return;
                                         }
@@ -2676,7 +2317,6 @@ namespace Picking
                                             string fac = Global.factura_por_surtir_zonas();
                                             if (fac != "")
                                             {
-                                                //int idzona = Global.obtener_siguiente_zona_por_surtir_P1(fac);
                                                 int idzona = Global.obtener_zona_inicio_picking1();                                               
                                                 System.Media.SystemSounds.Exclamation.Play();
                                                 txt_factura.Text = fac.Trim();
@@ -2762,11 +2402,6 @@ namespace Picking
                                 
                                 }
 
-                                //int tot_fact_activas = Global.tot_facturas_activas_zonas();
-                                //desactivar los status de la factura
-
-                               
-
                             }
 
 
@@ -2812,7 +2447,6 @@ namespace Picking
                                     alerta = true;
                                     msjalerta();
                                     System.Media.SystemSounds.Beep.Play();
-                                    //int id_zona = Global.obtener_siguiente_zona_por_surtir_P1(Global.invcnbr);
                                     lbl_msj.Text = "MOVER Cajas a  VALIDACION";
                                     msjalerta();
                                     btn_aceptar.Enabled = false;
@@ -2885,10 +2519,6 @@ namespace Picking
                         timer1.Enabled = true;
                         return;
                     }
-                    else
-                    {
-                        //alerta = false;
-                    }
 
                   tot_arts_ps = Global.Obtener_total_arts_pend_surtir_factura(Global.invcnbr);                 
 
@@ -2909,14 +2539,10 @@ namespace Picking
                       }
                       else
                       {
-                          //alerta = false;
                           btn_recibir_cajas.Enabled = false;                     
                       
                       }
 
-                      //Global.actualiza_status_zona(Global.invcnbr, IdZona_Picking, "TRAN");
-                      //agregar_status_zona(Global.invcnbr, IdZona_Picking, "SO");
-                      //Global.actualiza_status_zona(txt_factura.Text, Global.idzona, "TRAN");
                       alerta = true;
                       msjalerta(); 
                       btn_aceptar.Enabled = true;
@@ -2927,9 +2553,6 @@ namespace Picking
                       timer1.Enabled = true;
                       return;
                                   
-
-
-
                   }
                   else
                   {
@@ -2947,23 +2570,8 @@ namespace Picking
 
             } //**fin** if (Global.invcnbr == "" || Global.invcnbr == null)
 
-
-           
-              
-            
-
-
-
         }
 
-         
-
-        private void btn_recibir_cajas_Click(object sender, EventArgs e)
-        {
-        
-        
-                  
-        }
 
         private void btn_cajas_Click(object sender, EventArgs e)
         {
@@ -2972,7 +2580,6 @@ namespace Picking
                 return;
             }
             timer1.Enabled = false; 
-            //Cursor.Current = Cursors.WaitCursor;
             if (Global.picking ==2 )
             {
                 
@@ -3056,47 +2663,6 @@ namespace Picking
         }
               
 
-        //private void btn_operacion_Click(object sender, EventArgs e)
-        //{
-        //    if (parar == false)
-        //    {
-        //        timer1.Enabled = false;
-        //        timer2.Enabled = false;  
-        //        parar = true;
-        //        btn_aceptar.Enabled = false;
-        //        btn_recibir_cajas.Text = "F2-CONTINUAR";
-        //        btn_recibir_cajas.BackColor = Color.Green;
-        //        btn_recibir_cajas.ForeColor = Color.Black; 
-
-        //    }
-        //    else
-        //    {
-        //        parar = false;
-        //        btn_aceptar.Enabled = false;
-        //        btn_recibir_cajas.Text = "F2-PARAR";
-        //        btn_recibir_cajas.BackColor = Color.Red;
-        //        btn_recibir_cajas.ForeColor = Color.White;
-        //        if (txt_factura.Text != "")
-        //        {
-        //            //totales_ps_area_zona(txt_factura.Text);
-        //            timer2.Enabled = false; 
-        //            timer1.Enabled = true;
-        //        }
-        //        else
-        //        {
-        //            limpiar_datos();
-        //            btn_aceptar.Enabled   = false;
-        //            btn_cajas.Enabled = false;
-        //            btn_ver.Enabled = false; 
-        //            lbl_msj.Text = "Espere. Obteniendo Factura para surtir...";
-        //            timer2.Enabled = false; 
-        //            timer1.Enabled = true;
-        //        }
-                    
-            
-        //    }
-
-        //}
 
         private void timer2_Tick(object sender, EventArgs e)
         {
@@ -3118,7 +2684,6 @@ namespace Picking
             timer1.Enabled = false;
             timer2.Enabled = false;
             t1.Enabled = false;
-            //timer_surtimiento.Enabled = false; 
         }
 
         private void btn_recibir_cajas_Click1(object sender, EventArgs e)
@@ -3132,16 +2697,14 @@ namespace Picking
                 //obtener las cajas pendientes por recibir en picking1
                 if (Global.picking == 1)
                 {
-                    //obtener el totakl de cajas pendientes de recibir
+                    //obtener el total de cajas pendientes de recibir
                     Global.tot_cajas_pend_recibir_zonas(Global.invcnbr, out idzona, out tot_cajas);
                     if (tot_cajas > 0)
                     {
                        
-                        //timer_timeout.Enabled = false;  
                         frm_recepcion_cajas f = new frm_recepcion_cajas();
                         f.lbl_id_zona.Text = idzona;                       
                         f.lbl_factura.Text = Global.invcnbr;
-                        //this.Close();
                         this.Visible = false;
                         alerta = false;
                         msjalerta();
@@ -3157,7 +2720,6 @@ namespace Picking
                     }
                     else
                     {
-                        //this.Visible = true;
                         btn_recibir_cajas.Enabled = false;
                         timer1.Enabled = true;
                         return;
@@ -3180,7 +2742,6 @@ namespace Picking
                         f2.lbl_factura.Text = Global.invcnbr;
                         f2.idzona1 = idzonap2;
                         f2.lbl_id_zona.Text = idzonap2.ToString();
-                        //this.Close();
                         this.Hide();
                         alerta = false;
                         msjalerta();
@@ -3200,8 +2761,6 @@ namespace Picking
                             btn_recibir_cajas.Enabled = false;
                             frm_leer_carrito f = new frm_leer_carrito();
                             f.invcnbr = Global.invcnbr;
-                            //this.Close();
-                            //this.Visible = false;
                             this.Hide();
                             alerta = false;
                             msjalerta();
@@ -3243,8 +2802,6 @@ namespace Picking
                     {
                         frm_leer_carrito f = new frm_leer_carrito();
                         f.invcnbr = Global.invcnbr;
-                        //this.Close();
-                        //this.Visible = false;
                         this.Hide();
                         alerta = false;
                         msjalerta();
@@ -3253,7 +2810,6 @@ namespace Picking
                         {
                             lbl_msj.Text = "Seleccionar Carrito Para PICKING2 Correctamente";
                             MessageBox.Show("Seleccionar Carrito Para PICKING2 Correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                            //this.Visible = true;
                             this.Show();
                             timer1.Enabled = true;
                             return;
@@ -3298,8 +2854,6 @@ namespace Picking
             if (txt_factura.Text != "")
             {
                 timer1.Enabled = false;
-                //timer2.Enabled = false;
-                //t1.Enabled = false;
                 int tot_ps = 0;
                 int id_zona = 0;
                 string area = "";
@@ -3357,7 +2911,6 @@ namespace Picking
                             this.Show();
                             limpiar_datos();
                             timer1.Enabled = true;
-                            //timer2.Enabled = true;
                             t1.Enabled = true;
                         }
                         catch (Exception ex)
@@ -3373,7 +2926,6 @@ namespace Picking
 
                         MessageBox.Show("Error al comprobar articulos por surtir, Intente de nuevo");
                         timer1.Enabled = true;
-                        //timer2.Enabled = true;
                         t1.Enabled = true;
                     }
 
@@ -3415,7 +2967,6 @@ namespace Picking
                             this.Show();
                             limpiar_datos();
                             timer1.Enabled = true;
-                            //timer2.Enabled = true;
                             t1.Enabled = true;
                             timer_timeout.Enabled = true;
                         }
@@ -3453,7 +3004,6 @@ namespace Picking
             if (Global.invcnbr != "")
             {
                 t1.Enabled = false;
-                //timer1.Enabled = false;
                 Global.verificar_satus_factura();
                 if (Global.status_factura == "X" || Global.status_factura == "RR" || Global.status_factura == "RF")
                 {
@@ -3509,11 +3059,9 @@ namespace Picking
 
                 try
                 {
-                    //timer_surtimiento.Enabled=false;  
                     if (tot_so_zona2() <= 0)
                     {
-                        //if (tot_status_zona(2, "TRAN") == 0)
-                        //{
+                       
                             if (Global.tot_cajas_pend_recibir_zona(2) == 0)
                             {
                                 int tot_env = Global.facturas_por_enviar(Global.idzona,2);
@@ -3527,23 +3075,17 @@ namespace Picking
                                             Global.actualizar_turno_factura(cad.Trim(), Global.idzona, 2);
                                             if (Global.actualiza_status_zona(cad, Global.idzona, "PEV"))
                                             {
-                                                //if (agregar_status_zona(cad, 2, "TRAN"))
-                                                //{
 
-                                                //}
                                             }
                                         }
 
                                     }
                                 }
                             }
-                        //}
                     }
-                    //timer_surtimiento.Enabled=true;  
                 }
                 catch
                 {
-                 //timer_surtimiento.Enabled=true;  
                 }
             }
 
@@ -3556,10 +3098,8 @@ namespace Picking
             timer2.Enabled = false;
             t1.Enabled = false;
             timer_timeout.Enabled = false;
-            //timer_surtimiento.Enabled = false;
             if (txt_factura.Text != "")
             {
-                //tot_status_zona(Global.idzona,"PS")
                 if (Global.picking ==2)
                 {
                     int tot_ps = Global.total_articulos_por_surtir_picking2(txt_factura.Text.Trim());
@@ -3600,7 +3140,6 @@ namespace Picking
                                 else
                                 {
                                     timer1.Enabled = true;
-                                    //timer2.Enabled = true;
                                     t1.Enabled = true;
                                     return;
 
@@ -3609,7 +3148,6 @@ namespace Picking
                             else
                             {
                                 timer1.Enabled = true;
-                                //timer2.Enabled = true;
                                 t1.Enabled = true;
                                 return;
                             
@@ -3618,7 +3156,6 @@ namespace Picking
                         else
                         {
                             timer1.Enabled = true;
-                            //timer2.Enabled = true;
                             t1.Enabled = true;
                             timer_timeout.Enabled = true;
                             return;
@@ -3628,7 +3165,6 @@ namespace Picking
                         )
                         {
 
-                        //Global.mover_cajas_validacion(Global.invcnbr);
                         if (Global.Enviar_Validacion(Global.invcnbr))
                         {
                             int idzona_val = Global.obtener_idzona_validacion();
@@ -3640,7 +3176,6 @@ namespace Picking
                             Global.invcnbr = "";
                             Global.cajap2 = "";
                             limpiar_datos();
-                            //timer_timeout.Enabled = true;
                             this.Close();
 
                         }
@@ -3656,7 +3191,6 @@ namespace Picking
                             else
                             {
                                 timer1.Enabled = true;
-                                //timer2.Enabled = true;
                                 t1.Enabled = true;
                                 timer_timeout.Enabled = true;
                                 return;
@@ -3670,7 +3204,6 @@ namespace Picking
                     {
                         MessageBox.Show("Error al salir");
                         timer1.Enabled = true;
-                        //timer2.Enabled = true;
                         t1.Enabled = true;
                         timer_timeout.Enabled = true;
                         return;
@@ -3698,7 +3231,6 @@ namespace Picking
                                 else
                                 {
                                     timer1.Enabled = true;
-                                    //timer2.Enabled = true;
                                     t1.Enabled = true;
                                     timer_timeout.Enabled = true;
                                     return;
@@ -3708,7 +3240,6 @@ namespace Picking
                             else
                             {
                                 timer1.Enabled = true;
-                                //timer2.Enabled = true;
                                 t1.Enabled = true;
                                 return;
                             }
@@ -3728,7 +3259,6 @@ namespace Picking
                                  else
                                  {
                                      timer1.Enabled = true;
-                                     //timer2.Enabled = true;
                                      t1.Enabled = true;
                                      timer_timeout.Enabled = true;
                                      return;
@@ -3738,7 +3268,6 @@ namespace Picking
                              else
                              {
                                  timer1.Enabled = true;
-                                 //timer2.Enabled = true;
                                  t1.Enabled = true;
                                  timer_timeout.Enabled = true;
                                  return;
@@ -3772,7 +3301,6 @@ namespace Picking
                             else
                             {
                                 timer1.Enabled = true;
-                                //timer2.Enabled = true;
                                 t1.Enabled = true;
                                 timer_timeout.Enabled = true;
                                 return;
@@ -3793,7 +3321,6 @@ namespace Picking
                                 else
                                 {
                                     timer1.Enabled = true;
-                                    //timer2.Enabled = true;
                                     t1.Enabled = true;
                                     timer_timeout.Enabled = true;
                                     return;
@@ -3803,7 +3330,6 @@ namespace Picking
                             else
                             {
                                 timer1.Enabled = true;
-                                //timer2.Enabled = true;
                                 t1.Enabled = true;
                                 timer_timeout.Enabled = true;
                                 return;
@@ -3841,139 +3367,12 @@ namespace Picking
             timer1.Enabled = false;
             timer2.Enabled = false;
             t1.Enabled = false;
-            //timerHora.Enabled = false;   
         }
 
         private void timer_timeout_Tick(object sender, EventArgs e)
         {
-            if (Global.invcnbr != "" && Global.picking == 2)
-            {
-                //if (Global.TimeOutPicking())
-                //{
-                //    timer1.Enabled = false;
-                //    t1.Enabled = false;
-                //    timer_timeout.Enabled = false;                   
-                //    //cargar la pantalla de timeout
-                //    frm_time_out f = new frm_time_out();
-                //    f.InvcNbr = Global.invcnbr;
-                //    f.ShowDialog();
-                //    f.Dispose();
-                //    if (Global.timeout)
-                //    {
-                //        //Global.finalizar_partida(ID_Surt_Art);
-                //        if (invcnbr != "")
-                //        {
-                //            //if (Global.picking == 2)
-                //            //{
-                //                int tot_ps = Global.total_articulos_por_surtir_picking2(txt_factura.Text.Trim());
-                //                int tot_ps_p1 = Global.obtener_total_articulos_por_surtir_P1(txt_factura.Text.Trim());
-                //                string status = Global.obtener_status_factura(Global.invcnbr);
-                //                if (tot_ps_p1 > 0 && (status == "SO" || status == "PS"))
-                //                {
-                //                    //MessageBox.Show("Esta Factura tiene partidas pendientes de surtir en PICKING1");
-                //                    Global.actualizar_status_zonas(Global.invcnbr);
-                //                    Global.actualizar_turno_activo_factura(Global.invcnbr);
-                //                    Global.actualizar_status_factura(Global.invcnbr, "PS");
-                //                    Global.invcnbr = "";
-                //                    Global.cajap2 = "";
-                //                    limpiar_datos();
-                //                    this.Close();
-                //                }
-
-                //                if (tot_ps > 0 && (status == "SO" || status == "PS"))
-                //                {
-
-                //                    if (Global.salir_factura_picking2(Global.invcnbr))
-                //                    {
-                //                        Global.invcnbr = "";
-                //                        Global.cajap2 = "";
-                //                        limpiar_datos();
-                //                        this.Close();
-                //                    }
-                //                    else
-                //                    {
-                //                        timer1.Enabled = true;
-                //                        //timer2.Enabled = true;
-                //                        t1.Enabled = true;
-                //                        timer_timeout.Enabled = false;
-                //                        return;
-                //                    }
-
-                //                }
-                //                else if (tot_ps == 0 && (status == "SO" || status == "PS"))
-                //                {
-
-                //                    //Global.mover_cajas_validacion(Global.invcnbr);
-                //                    if (Global.Enviar_Validacion(Global.invcnbr))
-                //                    {
-                //                        int idzona_val = Global.obtener_idzona_validacion();
-                //                        int idzonap2 = Global.Obtener_IdZona_Picking2();
-                //                        Global.actualizar_status_zonas(Global.invcnbr);
-                //                        Global.actualizar_turno_activo_factura(Global.invcnbr);
-                //                        Global.mover_cajas_validacion(Global.invcnbr);
-                //                        Global.agregar_turno_factura(Global.invcnbr, idzonap2, idzona_val);
-                //                        Global.invcnbr = "";
-                //                        Global.cajap2 = "";
-                //                        limpiar_datos();
-                //                        this.Close();
-
-                //                    }
-                //                    else
-                //                    {
-                //                        if (Global.salir_factura_picking2(Global.invcnbr))
-                //                        {
-                //                            Global.invcnbr = "";
-                //                            Global.cajap2 = "";
-                //                            limpiar_datos();
-                //                            this.Close();
-                //                        }
-                //                        else
-                //                        {
-                //                            timer1.Enabled = true;
-                //                            //timer2.Enabled = true;
-                //                            t1.Enabled = true;
-                //                            timer_timeout.Enabled = false;
-                //                            return;
-
-                //                        }
-
-                //                    }
-
-                //                }
-                //                else
-                //                {
-                //                    // MessageBox.Show("Error al salir");
-                //                    timer1.Enabled = true;
-                //                    //timer2.Enabled = true;
-                //                    t1.Enabled = true;
-                //                    timer_timeout.Enabled = true;
-                //                    return;
-                //                }
-
-                //            //} //if (Global.picking ==2)
-
-                //        }
-                //        else
-                //        {
-                //            this.Close();
-                //        }
-                //    }
-                //    else
-                //    {
-                //        timer_timeout.Enabled = true;
-                //        timer1.Enabled = true;
-                //        t1.Enabled = true;
-                //    }
-                //}
-                //else
-                //{
-                //    timer_timeout.Enabled = true;
-                //    timer1.Enabled = true;
-                //    t1.Enabled = true;
-
-                //}
-            }
-            else if(Global.picking==1 )
+            
+            if(Global.picking==1 )
             {
                 if (Global.invcnbr != "")
                 {
@@ -3985,47 +3384,6 @@ namespace Picking
                             if (Global.TimeOutPicking())
                             {
                                 System.Media.SystemSounds.Exclamation.Play();
-                                //timer_timeout.Enabled = false;
-                                //timer1.Enabled = false;
-                                //t1.Enabled = false;
-                                //string cad_usuario = "";
-                                //cad_usuario = Global.usuario;
-                                //int tot = Global.tot_minutos_timeout(); 
-                                //cad_usuario = cad_usuario + "-" + Global.NombreUsuario(Global.usuario);
-                                //if (Global.agregar_log_eventos("INACTIVIDAD",
-                                //    "EL USUARIO  TIENE MAS DE " + tot.ToString()   +  " MINUTOS SIN ACTIVIDAD",
-                                //    Global.invcnbr,
-                                //    Global.usuario,
-                                //    "")
-                                //    )
-                                //{
-                                //    //Global.enviar_mensaje_evento("INACTIVIDAD",
-                                //    //"EL USUARIO  TIENE MAS DE 5 MINUTOS SIN ACTIVIDAD",
-                                //    //"AVISO USUARIO SIN ACTIVIDAD: " + cad_usuario,
-                                //    //Global.idzona.ToString(),
-                                //    //Global.picking.ToString(),
-                                //    //Global.area,
-                                //    //"",
-                                //    //Global.invcnbr,
-                                //    //Global.usuario
-                                //    //);
-                                //    ws.enviar_mensaje_evento(
-                                //        "INACTIVIDAD",
-                                //        "EL USUARIO  TIENE MAS DE "  + tot.ToString() + " MINUTOS SIN ACTIVIDAD",
-                                //        "AVISO USUARIO SIN ACTIVIDAD: " + cad_usuario,
-                                //        Global.idzona.ToString(),
-                                //        Global.picking.ToString(),
-                                //        Global.area,
-                                //        "",
-                                //        Global.invcnbr,
-                                //        Global.usuario
-                                //        ); 
-
-                                //}
-                                //Global.fecha_ultima_actividad = Global.FechaHoraActual();
-                                //timer_timeout.Enabled = true;
-                                //timer1.Enabled = true;
-                                //t1.Enabled = true;
                                 
                             }
                         }
@@ -4044,25 +3402,6 @@ namespace Picking
                             string cad_usuario = "";
                             cad_usuario = Global.usuario;
                             cad_usuario = cad_usuario + "-" + Global.NombreUsuario(Global.usuario);
-                            if (Global.agregar_log_eventos("INACTIVIDAD",
-                                "EL USUARIO  TIENE MAS DE 5 MINUTOS SIN ACTIVIDAD, NO SE HAN MOVIDO LAS CAJAS DE LA FACTURA A LA SIG ZONA, O NO SE HA ENVIADO A VALIDACION",
-                                Global.invcnbr,
-                                Global.usuario,
-                                "")
-                                )
-                            {
-                                //Global.enviar_mensaje_evento("INACTIVIDAD",
-                                //"EL USUARIO  TIENE MAS DE 5 MINUTOS SIN ACTIVIDAD",
-                                //"AVISO USUARIO SIN ACTIVIDAD: " + cad_usuario,
-                                //Global.idzona.ToString(),
-                                //Global.picking.ToString(),
-                                //Global.area,
-                                //"",
-                                //Global.invcnbr,
-                                //Global.usuario
-                                //);
-
-                            }
                             Global.fecha_ultima_actividad = Global.FechaHoraActual();
                             timer_timeout.Enabled = true;
                             timer1.Enabled = true;
@@ -4091,13 +3430,5 @@ namespace Picking
             timer_timeout.Enabled = true;
         }
 
-        private void timerHora_Tick(object sender, EventArgs e)
-        {
-            //statusBar1.Text = DateTime.Now.ToString("ddd dd/MMM/yyyy hh:mm:ss tt");     
-        } //void
-
-        
-
-       
     }
 }

@@ -46,20 +46,22 @@
             // 
             // txt_loc
             // 
-            this.txt_loc.Enabled = false;
             this.txt_loc.Font = new System.Drawing.Font("Tahoma", 27F, System.Drawing.FontStyle.Regular);
             this.txt_loc.Location = new System.Drawing.Point(3, 69);
             this.txt_loc.Name = "txt_loc";
-            this.txt_loc.ReadOnly = true;
             this.txt_loc.Size = new System.Drawing.Size(313, 50);
-            this.txt_loc.TabIndex = 1;
+            this.txt_loc.TabIndex = 0;
+            this.txt_loc.TextChanged += new System.EventHandler(this.txt_loc_TextChanged);
             this.txt_loc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_loc_KeyDown);
             // 
             // btn_Cerrar
             // 
-            this.btn_Cerrar.Location = new System.Drawing.Point(123, 125);
+            this.btn_Cerrar.BackColor = System.Drawing.Color.Red;
+            this.btn_Cerrar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Cerrar.ForeColor = System.Drawing.Color.White;
+            this.btn_Cerrar.Location = new System.Drawing.Point(99, 125);
             this.btn_Cerrar.Name = "btn_Cerrar";
-            this.btn_Cerrar.Size = new System.Drawing.Size(66, 43);
+            this.btn_Cerrar.Size = new System.Drawing.Size(115, 43);
             this.btn_Cerrar.TabIndex = 4;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -67,7 +69,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 300;
+            this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frm_leer_loc

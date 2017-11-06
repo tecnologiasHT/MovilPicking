@@ -9,6 +9,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.IO;
 using System.Drawing;
+//using HelperAccesoDatos;
 
 namespace Picking
 {
@@ -3903,8 +3904,10 @@ namespace Picking
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter da = new SqlDataAdapter();
             cmd.Connection = Global.cn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM ADN_Picking_Usuario_Zona WHERE (Usuario ='" + usuario + "')";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "ADN_Eliminar_Zonas_Usuario";
+            cmd.Parameters.Add("@Usuario", usuario);
+            //cmd.CommandText = "DELETE FROM ADN_Picking_Usuario_Zona WHERE (Usuario ='" + usuario + "')";
 
 
             try

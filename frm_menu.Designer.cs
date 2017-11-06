@@ -31,6 +31,7 @@
             this.btn_surtimiento = new System.Windows.Forms.Button();
             this.btn_cambiar_secc = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkIndicadores = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.grd_zonas = new System.Windows.Forms.DataGrid();
             this.lbl_picking = new System.Windows.Forms.Label();
@@ -38,7 +39,8 @@
             this.btn_salir = new System.Windows.Forms.Button();
             this.statusBar1 = new System.Windows.Forms.StatusBar();
             this.button1 = new System.Windows.Forms.Button();
-            this.linkIndicadores = new System.Windows.Forms.LinkLabel();
+            this.dataGridTableStyle1 = new System.Windows.Forms.DataGridTableStyle();
+            this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +78,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(138, 154);
             // 
+            // linkIndicadores
+            // 
+            this.linkIndicadores.Font = new System.Drawing.Font("Tahoma", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.linkIndicadores.Location = new System.Drawing.Point(21, 130);
+            this.linkIndicadores.Name = "linkIndicadores";
+            this.linkIndicadores.Size = new System.Drawing.Size(114, 20);
+            this.linkIndicadores.TabIndex = 23;
+            this.linkIndicadores.Text = "Indicadores...";
+            this.linkIndicadores.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.linkIndicadores.Click += new System.EventHandler(this.linkIndicadores_Click);
+            // 
             // label3
             // 
             this.label3.Location = new System.Drawing.Point(6, 20);
@@ -90,6 +103,7 @@
             this.grd_zonas.Name = "grd_zonas";
             this.grd_zonas.Size = new System.Drawing.Size(129, 88);
             this.grd_zonas.TabIndex = 19;
+            this.grd_zonas.TableStyles.Add(this.dataGridTableStyle1);
             // 
             // lbl_picking
             // 
@@ -137,16 +151,15 @@
             this.button1.Text = "F3- Picking";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // linkIndicadores
+            // dataGridTableStyle1
             // 
-            this.linkIndicadores.Font = new System.Drawing.Font("Tahoma", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.linkIndicadores.Location = new System.Drawing.Point(21, 130);
-            this.linkIndicadores.Name = "linkIndicadores";
-            this.linkIndicadores.Size = new System.Drawing.Size(114, 20);
-            this.linkIndicadores.TabIndex = 23;
-            this.linkIndicadores.Text = "Indicadores...";
-            this.linkIndicadores.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.linkIndicadores.Click += new System.EventHandler(this.linkIndicadores_Click);
+            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn1);
+            // 
+            // dataGridTextBoxColumn1
+            // 
+            this.dataGridTextBoxColumn1.Format = global::Picking.Properties.Resources.usuario;
+            this.dataGridTextBoxColumn1.FormatInfo = null;
+            this.dataGridTextBoxColumn1.Width = 100;
             // 
             // frm_menu
             // 
@@ -166,8 +179,6 @@
             this.Text = "Menu    ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_menu_Load);
-            this.Activated += new System.EventHandler(this.frm_menu_Activated);
-            this.Closing += new System.ComponentModel.CancelEventHandler(this.frm_menu_Closing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_menu_KeyDown);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -187,5 +198,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkIndicadores;
+        private System.Windows.Forms.DataGridTableStyle dataGridTableStyle1;
+        private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn1;
     }
 }

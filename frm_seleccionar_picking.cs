@@ -85,8 +85,6 @@ namespace Picking
                 Global.Eliminar_Zonas_Usuario(Global.usuario);
                 Global.picking = 2;
                 Global.orden_zona = 2;
-                //frmIndicadores f1 = new frmIndicadores();
-                //f1.ShowDialog();
                 frm_menu f = new frm_menu();
                 f.login = true;
                 this.Close();
@@ -138,6 +136,7 @@ namespace Picking
             }
 
         }
+
 
     }
 }

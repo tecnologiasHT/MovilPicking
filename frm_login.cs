@@ -8,15 +8,17 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Reflection;
+//using HelperAccesoDatos;
+
 namespace Picking
 {
     public partial class frm_login : Form 
     {
+        //AccesoDatosHelper DataAccess = new AccesoDatosHelper(Properties.Resources.connectionstring);
         public frm_login()
         {
             InitializeComponent();
         }
-        //SqlConnection cn = new SqlConnection(Properties.Resources.connectionstring);
 
         public bool acceso = false;
 
@@ -24,14 +26,16 @@ namespace Picking
         {
             DataSet dt = new DataSet();
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = Global.cn ;
+            cmd.Connection = Global.cn;
             SqlDataAdapter da = new SqlDataAdapter();
             DataRow dr;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "ADN_Obtener_Usuario";
-            cmd.Parameters.AddWithValue("@NumNomina",usuario.Trim());
-            //cmd.Parameters.AddWithValue("@Puesto", puesto.Trim() );            
+            cmd.Parameters.AddWithValue("@NumNomina", usuario.Trim());
             da.SelectCommand = cmd;
+            //Dictionary<string, object> parametros = new Dictionary<string, object>();
+            //parametros.Add("@NumNomina",usuario.Trim());
+            //dt=DataAccess.ExecuteSelect("ADN_Obtener_Usuario",parametros).DataSet;
             try
             {
                 
@@ -47,7 +51,6 @@ namespace Picking
                     dr = dt.Tables[0].Rows[0];
                     if (!string.IsNullOrEmpty(dr["Status"].ToString()))
                     {
-                        //string s = dr["Status"].ToString().Trim();
                         if (dr["Status"].ToString().Trim() != "True")
                         {
                             MessageBox.Show("Usuario No Autorizado!");
@@ -61,8 +64,6 @@ namespace Picking
                             if (dr["Password"].ToString().Trim() != password)
                             {
                                 MessageBox.Show("Password Incorrecto");
-                                //txt_usuario.Focus();
-                                //txt_usuario.Text = "";
                                 txt_password.Text = "";
                                 txt_password.Focus();
                                 return false;
@@ -90,28 +91,6 @@ namespace Picking
                                 }
                                 //id del proceso de surtimiento
                                 Global.idproceso = 2;
-
-                                //if (!string.IsNullOrEmpty(dr["Area"].ToString()))
-                                //{
-                                //    Global.area = dr["Area"].ToString().Trim();
-                                //}
-                                //else
-                                //{
-                                //    Global.area = ""; 
-                                //}
-                                //if (!string.IsNullOrEmpty(dr["Zona"].ToString()))
-                                //{
-                                //    Global.zona = dr["Zona"].ToString().Trim();
-                                //}
-                                //else
-                                //{
-                                //    Global.zona = "";
-                                //}
-                                //if (!string.IsNullOrEmpty(dr["Orden"].ToString()))
-                                //{
-                                //    Global.orden_zona = Convert.ToInt16(dr["Orden"].ToString().Trim());
-                                //}
-
                                 return true;
 
 
@@ -262,5 +241,6 @@ namespace Picking
         {
             btn_aceptar.BackColor = Color.Gray;
         }
+
     }
 }
